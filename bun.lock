@@ -322,7 +322,7 @@
       "name": "opencode",
       "version": "1.14.39",
       "bin": {
-        "opencode": "./bin/opencode",
+        "openbmw": "./bin/openbmw",
       },
       "dependencies": {
         "@actions/core": "1.11.1",
