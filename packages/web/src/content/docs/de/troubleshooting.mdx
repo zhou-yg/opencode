@@ -58,15 +58,15 @@ Wenn die Desktop-App beim Start abstuerzt, haengt oder sich seltsam verhaelt, de
 
 Oeffne deine globale Konfigurationsdatei und suche nach dem `plugin`-Schluessel.
 
-- **macOS/Linux**: `~/.config/openbmw/opencode\.jsonc` (oder `~/.config/openbmw/opencode\.json`)
-- **macOS/Linux** (aeltere Installationen): `~/.local/share/openbmw/opencode\.jsonc`
-- **Windows**: Druecke `WIN+R` und fuege ein: `%USERPROFILE%\.config\openbmw\opencode\.jsonc`
+- **macOS/Linux**: `~/.config/openbmw/opencode.jsonc` (oder `~/.config/openbmw/opencode.json`)
+- **macOS/Linux** (aeltere Installationen): `~/.local/share/openbmw/opencode.jsonc`
+- **Windows**: Druecke `WIN+R` und fuege ein: `%USERPROFILE%\.config\openbmw\opencode.jsonc`
 
 Wenn du Plugins konfiguriert hast, deaktiviere sie voruebergehend, indem du den Schluessel entfernst oder auf ein leeres Array setzt:
 
 ```jsonc
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "plugin": [],
 }
 ```
@@ -112,7 +112,7 @@ Klicke im Startbildschirm auf den Servernamen (mit dem Statuspunkt), um die Serv
 
 #### `server.port` / `server.hostname` aus Konfiguration entfernen
 
-Wenn deine `opencode\.json(c)` einen `server`-Abschnitt enthaelt, entferne ihn voruebergehend und starte die Desktop-App neu.
+Wenn deine `opencode.json(c)` einen `server`-Abschnitt enthaelt, entferne ihn voruebergehend und starte die Desktop-App neu.
 
 #### Umgebungsvariablen prüfen
 
@@ -159,8 +159,8 @@ Wenn die App nicht startet und du Einstellungen nicht in der UI loeschen kannst,
 1. Beende OpenCode Desktop.
 2. Finde und loesche diese Dateien (im App-Data-Verzeichnis von OpenCode Desktop):
 
-- `opencode\.settings.dat` (desktop default server URL)
-- `opencode\.global.dat` und `opencode\.workspace.*.dat` (UI state like recent servers/projects)
+- `opencode.settings.dat` (desktop default server URL)
+- `opencode.global.dat` und `opencode.workspace.*.dat` (UI state like recent servers/projects)
 
 So findest du das Verzeichnis schnell:
 
@@ -186,7 +186,7 @@ Wenn du Probleme mit OpenCode hast:
 
    Fuer schnelle Hilfe und Austausch in der Community:
 
-   [**opencode\.ai/discord**](https://opencode\.ai/discord)
+   [**opencode.ai/discord**](https://opencode.ai/discord)
 
 ---
 

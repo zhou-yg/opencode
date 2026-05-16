@@ -187,8 +187,8 @@ if (!Script.preview) {
   const tap = `https://x-access-token:${token}@github.com/anomalyco/homebrew-tap.git`
   await $`rm -rf ./dist/homebrew-tap`
   await $`git clone ${tap} ./dist/homebrew-tap`
-  await Bun.file("./dist/homebrew-tap/opencode\.rb").write(homebrewFormula)
-  await $`cd ./dist/homebrew-tap && git add opencode\.rb`
+  await Bun.file("./dist/homebrew-tap/opencode.rb").write(homebrewFormula)
+  await $`cd ./dist/homebrew-tap && git add opencode.rb`
   if ((await $`cd ./dist/homebrew-tap && git diff --cached --quiet`.nothrow()).exitCode !== 0) {
     await $`cd ./dist/homebrew-tap && git commit -m "Update to v${Script.version}"`
     await $`cd ./dist/homebrew-tap && git push`

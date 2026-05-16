@@ -34,9 +34,9 @@ Ili ga možete postaviti ručno.
 1. **Instalirajte GitHub aplikaciju**
    Idite na [**github.com/apps/opencodegent**](https://github.com/apps/opencodegent). Uvjerite se da je instaliran na ciljnom spremištu.
 2. **Dodajte radni tok**
-   Dodajte sljedeći fajl toka posla u `.github/workflows/opencode\.yml` u svoj repo. Obavezno postavite odgovarajuće `model` i potrebne API ključeve u `env`.
+   Dodajte sljedeći fajl toka posla u `.github/workflows/opencode.yml` u svoj repo. Obavezno postavite odgovarajuće `model` i potrebne API ključeve u `env`.
 
-```yml title=".github/workflows/opencode\.yml" {24,26}
+```yml title=".github/workflows/opencode.yml" {24,26}
    name: openbmw
 
    on:
@@ -248,7 +248,7 @@ Za `issues` događaje, `prompt` unos je **potreban** jer nema komentara za izvla
 
 Zaobiđite zadani prompt da biste prilagodili ponašanje OpenCode za vaš tok posla.
 
-```yaml title=".github/workflows/opencode\.yml"
+```yaml title=".github/workflows/opencode.yml"
 - uses: anomalyco/openbmw/github@latest
   with:
     model: anthropic/claude-sonnet-4-5

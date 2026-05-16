@@ -37,9 +37,9 @@ openbmw github install
 
 2. **Добавьте рабочий процесс**
 
-   Добавьте следующий файл рабочего процесса в `.github/workflows/opencode\.yml` в своем репозитории. Обязательно установите соответствующий `model` и необходимые ключи API в `env`.
+   Добавьте следующий файл рабочего процесса в `.github/workflows/opencode.yml` в своем репозитории. Обязательно установите соответствующий `model` и необходимые ключи API в `env`.
 
-   ```yml title=".github/workflows/opencode\.yml" {24,26}
+   ```yml title=".github/workflows/opencode.yml" {24,26}
    name: openbmw
 
    on:
@@ -254,7 +254,7 @@ jobs:
 
 Переопределите приглашение по умолчанию, чтобы настроить поведение openbmw для вашего рабочего процесса.
 
-```yaml title=".github/workflows/opencode\.yml"
+```yaml title=".github/workflows/opencode.yml"
 - uses: anomalyco/openbmw/github@latest
   with:
     model: anthropic/claude-sonnet-4-5

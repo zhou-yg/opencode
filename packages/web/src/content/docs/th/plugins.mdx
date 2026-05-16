@@ -30,9 +30,9 @@ description: เขียนปลั๊กอินของคุณเอง�
 
 ระบุแพ็คเกจ npm ในไฟล์ปรับแต่งของคุณ
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "plugin": ["opencode-helicone-session", "opencode-wakatime", "@my-org/custom-plugin"]
 }
 ```
@@ -55,8 +55,8 @@ description: เขียนปลั๊กอินของคุณเอง�
 
 ปลั๊กอินถูกโหลดจากทุกแหล่งและ hooks ทั้งหมดทำงานตามลำดับ ลำดับการโหลดคือ:
 
-1. การกำหนดค่าส่วนกลาง (`~/.config/openbmw/opencode\.json`)
-2. การกำหนดค่าโครงการ (`opencode\.json`)
+1. การกำหนดค่าส่วนกลาง (`~/.config/openbmw/opencode.json`)
+2. การกำหนดค่าโครงการ (`opencode.json`)
 3. ไดเร็กทอรีปลั๊กอินสากล (`~/.config/openbmw/plugins/`)
 4. ไดเรกทอรีปลั๊กอินโครงการ (`.openbmw/plugins/`)
 
@@ -331,7 +331,7 @@ export const MyPlugin = async ({ client }) => {
 }
 ```
 
-ระดับ: `debug`, `info`, `warn`, `error` ดู[SDKเอกสารประกอบ](https://opencode\.ai/docs/sdk)สำหรับรายละเอียด
+ระดับ: `debug`, `info`, `warn`, `error` ดู[SDKเอกสารประกอบ](https://opencode.ai/docs/sdk)สำหรับรายละเอียด
 
 ---
 

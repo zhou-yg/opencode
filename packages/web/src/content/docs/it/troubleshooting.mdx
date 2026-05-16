@@ -57,15 +57,15 @@ Se l'app desktop va in crash all'avvio, si blocca o si comporta in modo strano, 
 
 Apri il tuo file di configurazione globale e cerca la chiave `plugin`.
 
-- **macOS/Linux**: `~/.config/openbmw/opencode\.jsonc` (o `~/.config/openbmw/opencode\.json`)
-- **macOS/Linux** (installazioni vecchie): `~/.local/share/openbmw/opencode\.jsonc`
-- **Windows**: premi `WIN+R` e incolla `%USERPROFILE%\.config\openbmw\opencode\.jsonc`
+- **macOS/Linux**: `~/.config/openbmw/opencode.jsonc` (o `~/.config/openbmw/opencode.json`)
+- **macOS/Linux** (installazioni vecchie): `~/.local/share/openbmw/opencode.jsonc`
+- **Windows**: premi `WIN+R` e incolla `%USERPROFILE%\.config\openbmw\opencode.jsonc`
 
 Se hai plugin configurati, disabilitali temporaneamente rimuovendo la chiave o impostandola a un array vuoto:
 
 ```jsonc
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "plugin": [],
 }
 ```
@@ -111,7 +111,7 @@ Dalla schermata Home, fai clic sul nome del server (con il pallino di stato) per
 
 #### Rimuovi `server.port` / `server.hostname` dalla tua configurazione
 
-Se il tuo `opencode\.json(c)` contiene una sezione `server`, rimuovila temporaneamente e riavvia l'app desktop.
+Se il tuo `opencode.json(c)` contiene una sezione `server`, rimuovila temporaneamente e riavvia l'app desktop.
 
 #### Controlla le variabili d'ambiente
 
@@ -158,8 +158,8 @@ Se l'app non si avvia e non riesci a ripulire le impostazioni dall'interfaccia, 
 1. Chiudi OpenCode Desktop.
 2. Trova ed elimina questi file (si trovano nella directory dati dell'app OpenCode Desktop):
 
-- `opencode\.settings.dat` (desktop default server URL)
-- `opencode\.global.dat` e `opencode\.workspace.*.dat` (stato dell'interfaccia come server/progetti recenti)
+- `opencode.settings.dat` (desktop default server URL)
+- `opencode.global.dat` e `opencode.workspace.*.dat` (stato dell'interfaccia come server/progetti recenti)
 
 Per trovare rapidamente la directory:
 
@@ -185,7 +185,7 @@ Se riscontri problemi con OpenCode:
 
    Per supporto in tempo reale e discussioni con la community, unisciti al nostro server Discord:
 
-   [**opencode\.ai/discord**](https://opencode\.ai/discord)
+   [**opencode.ai/discord**](https://opencode.ai/discord)
 
 ---
 

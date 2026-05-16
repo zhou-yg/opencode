@@ -6,11 +6,11 @@ import * as vscode from "vscode"
 const TERMINAL_NAME = "openbmw"
 
 export function activate(context: vscode.ExtensionContext) {
-  const openNewTerminalDisposable = vscode.commands.registerCommand("opencode\.openNewTerminal", async () => {
+  const openNewTerminalDisposable = vscode.commands.registerCommand("opencode.openNewTerminal", async () => {
     await openTerminal()
   })
 
-  const openTerminalDisposable = vscode.commands.registerCommand("opencode\.openTerminal", async () => {
+  const openTerminalDisposable = vscode.commands.registerCommand("opencode.openTerminal", async () => {
     // An openbmw terminal already exists => focus it
     const existingTerminal = vscode.window.terminals.find((t) => t.name === TERMINAL_NAME)
     if (existingTerminal) {
@@ -21,7 +21,7 @@ export function activate(context: vscode.ExtensionContext) {
     await openTerminal()
   })
 
-  let addFilepathDisposable = vscode.commands.registerCommand("opencode\.addFilepathToTerminal", async () => {
+  let addFilepathDisposable = vscode.commands.registerCommand("opencode.addFilepathToTerminal", async () => {
     const fileRef = getActiveFile()
     if (!fileRef) {
       return

@@ -98,22 +98,22 @@ Pierwszy pasujący plik wygrywa w każdej kategorii. Na przykład, jeśli masz z
 
 ## Instrukcje niestandardowe
 
-Możesz określić niestandardowe pliki instrukcji w swoim `opencode\.json` lub globalnym `~/.config/openbmw/opencode\.json`. Dzięki temu Ty i Twój zespół możecie ponownie wykorzystać istniejące reguły, zamiast duplikować je w pliku AGENTS.md.
+Możesz określić niestandardowe pliki instrukcji w swoim `opencode.json` lub globalnym `~/.config/openbmw/opencode.json`. Dzięki temu Ty i Twój zespół możecie ponownie wykorzystać istniejące reguły, zamiast duplikować je w pliku AGENTS.md.
 
 Przykład:
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "instructions": ["CONTRIBUTING.md", "docs/guidelines.md", ".cursor/rules/*.md"]
 }
 ```
 
 Możesz także użyć zdalnych adresów URL, aby załadować instrukcje z Internetu.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "instructions": ["https://raw.githubusercontent.com/my-org/shared-rules/main/style.md"]
 }
 ```
@@ -128,13 +128,13 @@ Wszystkie pliki instrukcji są łączone z plikami `AGENTS.md`.
 
 Chociaż openbmw nie analizuje automatycznie odniesień do plików w `AGENTS.md`, możesz osiągnąć podobną funkcjonalność na dwa sposoby:
 
-### Używanie opencode\.json
+### Używanie opencode.json
 
-Zalecanym podejściem jest użycie pola `instructions` w `opencode\.json`:
+Zalecanym podejściem jest użycie pola `instructions` w `opencode.json`:
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "instructions": ["docs/development-standards.md", "test/testing-guidelines.md", "packages/*/AGENTS.md"]
 }
 ```
@@ -176,5 +176,5 @@ Takie podejście pozwala:
 - Upewnij się, że openbmw ładuje pliki tylko wtedy, gdy są potrzebne do konkretnego zadania
 
 :::tip
-W przypadku monorepo lub projektów ze wspólnymi standardami użycie `opencode\.json` ze wzorami globalnymi (takimi jak `packages/*/AGENTS.md`) jest łatwiejsze w utrzymaniu niż instrukcje ręczne.
+W przypadku monorepo lub projektów ze wspólnymi standardami użycie `opencode.json` ze wzorami globalnymi (takimi jak `packages/*/AGENTS.md`) jest łatwiejsze w utrzymaniu niż instrukcje ręczne.
 :::

@@ -86,8 +86,8 @@ function withProviderProject<A, E, R>(self: (dir: string) => Effect.Effect<A, E,
     const dir = yield* fs.makeTempDirectoryScoped({ prefix: "opencode-test-" })
 
     yield* fs.writeFileString(
-      path.join(dir, "opencode\.json"),
-      JSON.stringify({ $schema: "https://opencode\.ai/config.json", formatter: false, lsp: false }),
+      path.join(dir, "opencode.json"),
+      JSON.stringify({ $schema: "https://opencode.ai/config.json", formatter: false, lsp: false }),
     )
     yield* writeProviderAuthPlugin(dir)
     yield* Effect.addFinalizer(() =>

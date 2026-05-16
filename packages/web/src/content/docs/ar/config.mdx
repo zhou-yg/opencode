@@ -11,9 +11,9 @@ description: استخدام ملف إعدادات OpenCode بصيغة JSON.
 
 يدعم OpenCode تنسيقي **JSON** و**JSONC** (JSON مع تعليقات).
 
-```jsonc title="opencode\.jsonc"
+```jsonc title="opencode.jsonc"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   // إعدادات السمة
   "theme": "openbmw",
   "model": "anthropic/claude-sonnet-4-5",
@@ -43,9 +43,9 @@ description: استخدام ملف إعدادات OpenCode بصيغة JSON.
 تُحمَّل مصادر الإعدادات بهذا الترتيب (المصادر اللاحقة تتجاوز السابقة):
 
 1. **الإعدادات البعيدة** (من `.well-known/openbmw`) - الإعدادات الافتراضية على مستوى المؤسسة
-2. **الإعدادات العامة** (`~/.config/openbmw/opencode\.json`) - تفضيلات المستخدم
+2. **الإعدادات العامة** (`~/.config/openbmw/opencode.json`) - تفضيلات المستخدم
 3. **إعدادات مخصصة** (`OPENCODE_CONFIG` env var) - تجاوزات مخصصة
-4. **إعدادات المشروع** (`opencode\.json` داخل المشروع) - إعدادات خاصة بالمشروع
+4. **إعدادات المشروع** (`opencode.json` داخل المشروع) - إعدادات خاصة بالمشروع
 5. **أدلة `.openbmw`** - الوكلاء، الأوامر، الإضافات
 6. **إعدادات ضمنية** (`OPENCODE_CONFIG_CONTENT` env var) - تجاوزات وقت التشغيل
 
@@ -79,7 +79,7 @@ description: استخدام ملف إعدادات OpenCode بصيغة JSON.
 
 يمكنك تفعيل خوادم محددة في إعداداتك المحلية:
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
   "mcp": {
     "jira": {
@@ -95,7 +95,7 @@ description: استخدام ملف إعدادات OpenCode بصيغة JSON.
 
 ### عام
 
-ضع إعدادات OpenCode العامة في `~/.config/openbmw/opencode\.json`. استخدم الإعدادات العامة للتفضيلات على مستوى المستخدم مثل السمات، والمزوّدين، أو اختصارات المفاتيح.
+ضع إعدادات OpenCode العامة في `~/.config/openbmw/opencode.json`. استخدم الإعدادات العامة للتفضيلات على مستوى المستخدم مثل السمات، والمزوّدين، أو اختصارات المفاتيح.
 
 تتجاوز الإعدادات العامة القيم الافتراضية البعيدة الخاصة بالمؤسسة.
 
@@ -103,7 +103,7 @@ description: استخدام ملف إعدادات OpenCode بصيغة JSON.
 
 ### لكل مشروع
 
-أضف `opencode\.json` في جذر مشروعك. تمتلك إعدادات المشروع أعلى أولوية بين ملفات الإعدادات القياسية، إذ تتجاوز الإعدادات العامة والبعيدة معًا.
+أضف `opencode.json` في جذر مشروعك. تمتلك إعدادات المشروع أعلى أولوية بين ملفات الإعدادات القياسية، إذ تتجاوز الإعدادات العامة والبعيدة معًا.
 
 :::tip
 ضع إعدادات المشروع الخاصة في جذر مشروعك.
@@ -145,7 +145,7 @@ openbmw run "Hello world"
 
 ## المخطط
 
-يحتوي ملف الإعدادات على مخطط مُعرَّف في [**`opencode\.ai/config.json`**](https://opencode\.ai/config.json).
+يحتوي ملف الإعدادات على مخطط مُعرَّف في [**`opencode.ai/config.json`**](https://opencode.ai/config.json).
 
 يفترض أن يتمكن محررك من التحقق والإكمال التلقائي اعتمادًا على هذا المخطط.
 
@@ -155,9 +155,9 @@ openbmw run "Hello world"
 
 يمكنك ضبط الإعدادات الخاصة بـ TUI عبر الخيار `tui`.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "tui": {
     "scroll_speed": 3,
     "scroll_acceleration": {
@@ -182,9 +182,9 @@ openbmw run "Hello world"
 
 يمكنك ضبط إعدادات الخادم لأوامر `openbmw serve` و`openbmw web` عبر الخيار `server`.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "server": {
     "port": 4096,
     "hostname": "0.0.0.0",
@@ -200,7 +200,7 @@ openbmw run "Hello world"
 - `port` - المنفذ الذي سيتم الاستماع عليه.
 - `hostname` - اسم المضيف الذي سيتم الاستماع عليه. عند تفعيل `mdns` وعدم ضبط اسم مضيف، تكون القيمة الافتراضية `0.0.0.0`.
 - `mdns` - تفعيل اكتشاف الخدمة عبر mDNS. يتيح ذلك للأجهزة الأخرى على الشبكة اكتشاف خادم OpenCode.
-- `mdnsDomain` - اسم نطاق مخصص لخدمة mDNS. القيمة الافتراضية هي `opencode\.local`. مفيد لتشغيل عدة نُسخ على نفس الشبكة.
+- `mdnsDomain` - اسم نطاق مخصص لخدمة mDNS. القيمة الافتراضية هي `opencode.local`. مفيد لتشغيل عدة نُسخ على نفس الشبكة.
 - `cors` - أصول إضافية مسموح بها لـ CORS عند استخدام خادم HTTP من عميل يعتمد على المتصفح. يجب أن تكون القيم أصولًا كاملة (البروتوكول + المضيف + منفذ اختياري)، مثل `https://app.example.com`.
 
 [تعرف على المزيد حول الخادم هنا](/docs/server).
@@ -211,9 +211,9 @@ openbmw run "Hello world"
 
 يمكنك إدارة الأدوات التي يمكن لـ LLM استخدامها عبر الخيار `tools`.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "tools": {
     "write": false,
     "bash": false
@@ -229,9 +229,9 @@ openbmw run "Hello world"
 
 يمكنك ضبط المزوّدين والنماذج التي تريد استخدامها في إعدادات OpenCode عبر الخيارات `provider` و`model` و`small_model`.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "provider": {},
   "model": "anthropic/claude-sonnet-4-5",
   "small_model": "anthropic/claude-haiku-4-5"
@@ -242,9 +242,9 @@ openbmw run "Hello world"
 
 قد تتضمن خيارات المزوّد `timeout` و`setCacheKey`:
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "provider": {
     "anthropic": {
       "options": {
@@ -271,9 +271,9 @@ openbmw run "Hello world"
 
 يدعم Amazon Bedrock إعدادات خاصة بـ AWS:
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "provider": {
     "amazon-bedrock": {
       "options": {
@@ -302,9 +302,9 @@ openbmw run "Hello world"
 
 يمكنك ضبط السمة التي تريد استخدامها في إعدادات OpenCode عبر الخيار `theme`.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "theme": ""
 }
 ```
@@ -317,9 +317,9 @@ openbmw run "Hello world"
 
 يمكنك ضبط وكلاء متخصصين لمهام محددة عبر الخيار `agent`.
 
-```jsonc title="opencode\.jsonc"
+```jsonc title="opencode.jsonc"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "agent": {
     "code-reviewer": {
       "description": "Reviews code for best practices and potential issues",
@@ -343,9 +343,9 @@ openbmw run "Hello world"
 
 يمكنك تعيين الوكيل الافتراضي باستخدام الخيار `default_agent`. يحدد ذلك أي وكيل سيتم استخدامه عندما لا يتم تحديد وكيل صراحةً.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "default_agent": "plan"
 }
 ```
@@ -360,9 +360,9 @@ openbmw run "Hello world"
 
 يمكنك ضبط ميزة [share](/docs/share) عبر الخيار `share`.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "share": "manual"
 }
 ```
@@ -381,9 +381,9 @@ openbmw run "Hello world"
 
 يمكنك ضبط أوامر مخصصة للمهام المتكررة عبر الخيار `command`.
 
-```jsonc title="opencode\.jsonc"
+```jsonc title="opencode.jsonc"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "command": {
     "test": {
       "template": "Run the full test suite with coverage report and show any failures.\nFocus on the failing tests and suggest fixes.",
@@ -407,9 +407,9 @@ openbmw run "Hello world"
 
 يمكنك تخصيص اختصارات المفاتيح عبر الخيار `keybinds`.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "keybinds": {}
 }
 ```
@@ -422,9 +422,9 @@ openbmw run "Hello world"
 
 سيقوم OpenCode بتنزيل أي تحديثات جديدة تلقائيًا عند بدء التشغيل. يمكنك تعطيل ذلك عبر الخيار `autoupdate`.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "autoupdate": false
 }
 ```
@@ -438,9 +438,9 @@ openbmw run "Hello world"
 
 يمكنك ضبط منسّقات الشفرة عبر الخيار `formatter`.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "formatter": {
     "prettier": {
       "disabled": true
@@ -466,9 +466,9 @@ openbmw run "Hello world"
 
 على سبيل المثال، لضمان أن أداتي `edit` و`bash` تتطلبان موافقة المستخدم:
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "permission": {
     "edit": "ask",
     "bash": "ask"
@@ -484,9 +484,9 @@ openbmw run "Hello world"
 
 يمكنك التحكم في سلوك ضغط السياق عبر الخيار `compaction`.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "compaction": {
     "auto": true,
     "prune": true
@@ -504,9 +504,9 @@ openbmw run "Hello world"
 
 يمكنك ضبط أنماط التجاهل لمراقِب الملفات عبر الخيار `watcher`.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "watcher": {
     "ignore": ["node_modules/**", "dist/**", ".git/**"]
   }
@@ -521,9 +521,9 @@ openbmw run "Hello world"
 
 يمكنك ضبط خوادم MCP التي تريد استخدامها عبر الخيار `mcp`.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "mcp": {}
 }
 ```
@@ -538,9 +538,9 @@ openbmw run "Hello world"
 
 ضع ملفات الإضافات في `.openbmw/plugins/` أو `~/.config/openbmw/plugins/`. يمكنك أيضًا تحميل إضافات من npm عبر الخيار `plugin`.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "plugin": ["opencode-helicone-session", "@my-org/custom-plugin"]
 }
 ```
@@ -553,9 +553,9 @@ openbmw run "Hello world"
 
 يمكنك ضبط التعليمات الخاصة بالنموذج الذي تستخدمه عبر الخيار `instructions`.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "instructions": ["CONTRIBUTING.md", "docs/guidelines.md", ".cursor/rules/*.md"]
 }
 ```
@@ -569,9 +569,9 @@ openbmw run "Hello world"
 
 يمكنك تعطيل المزوّدين الذين يتم تحميلهم تلقائيًا عبر الخيار `disabled_providers`. هذا مفيد عندما تريد منع تحميل مزوّدين معينين حتى لو كانت بيانات الاعتماد الخاصة بهم متاحة.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "disabled_providers": ["openai", "gemini"]
 }
 ```
@@ -592,9 +592,9 @@ openbmw run "Hello world"
 
 يمكنك تحديد قائمة سماح للمزوّدين عبر الخيار `enabled_providers`. عند ضبطه، سيتم تفعيل المزوّدين المحددين فقط وسيتم تجاهل البقية.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "enabled_providers": ["anthropic", "openai"]
 }
 ```
@@ -613,9 +613,9 @@ openbmw run "Hello world"
 
 يحتوي المفتاح `experimental` على خيارات قيد التطوير النشط.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "experimental": {}
 }
 ```
@@ -636,9 +636,9 @@ openbmw run "Hello world"
 
 استخدم `{env:VARIABLE_NAME}` لاستبدال متغيرات البيئة:
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "model": "{env:OPENCODE_MODEL}",
   "provider": {
     "anthropic": {
@@ -659,9 +659,9 @@ openbmw run "Hello world"
 
 استخدم `{file:path/to/file}` لاستبدال محتويات ملف:
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "instructions": ["./custom-instructions.md"],
   "provider": {
     "openai": {

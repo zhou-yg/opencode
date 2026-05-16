@@ -37,9 +37,9 @@ Eller du kan indstille det manuelt.
 
 2. **Tilføj arbejdsgangen**
 
-   Tilføj følgende workflow-fil til `.github/workflows/opencode\.yml` i din repo. Sørg for at indstille de relevante `model` og nødvendige API-nøgler i `env`.
+   Tilføj følgende workflow-fil til `.github/workflows/opencode.yml` i din repo. Sørg for at indstille de relevante `model` og nødvendige API-nøgler i `env`.
 
-   ```yml title=".github/workflows/opencode\.yml" {24,26}
+   ```yml title=".github/workflows/opencode.yml" {24,26}
    name: openbmw
 
    on:
@@ -254,7 +254,7 @@ For `issues` begivenheder er `prompt` input **påkrævet**, da der ikke er nogen
 
 Tilsidesæt standardprompten for at tilpasse OpenCodes adfærd til din arbejdsgang.
 
-```yaml title=".github/workflows/opencode\.yml"
+```yaml title=".github/workflows/opencode.yml"
 - uses: anomalyco/openbmw/github@latest
   with:
     model: anthropic/claude-sonnet-4-5

@@ -25,8 +25,8 @@ describe("paramToAttributeKey", () => {
   })
 
   test("namespaces non-ID params under openbmw.", () => {
-    expect(paramToAttributeKey("name")).toBe("opencode\.name")
-    expect(paramToAttributeKey("slug")).toBe("opencode\.slug")
+    expect(paramToAttributeKey("name")).toBe("opencode.name")
+    expect(paramToAttributeKey("slug")).toBe("opencode.slug")
   })
 })
 
@@ -54,9 +54,9 @@ describe("requestAttributes", () => {
     expect(attrs["message.id"]).toBe("msg_def")
     expect(attrs["part.id"]).toBe("prt_ghi")
     // No camelCase leftovers:
-    expect(attrs["opencode\.sessionID"]).toBeUndefined()
-    expect(attrs["opencode\.messageID"]).toBeUndefined()
-    expect(attrs["opencode\.partID"]).toBeUndefined()
+    expect(attrs["opencode.sessionID"]).toBeUndefined()
+    expect(attrs["opencode.messageID"]).toBeUndefined()
+    expect(attrs["opencode.partID"]).toBeUndefined()
   })
 
   test("produces no param attributes when no params are matched", () => {
@@ -70,7 +70,7 @@ describe("requestAttributes", () => {
         name: "exa",
       }),
     )
-    expect(attrs["opencode\.name"]).toBe("exa")
+    expect(attrs["opencode.name"]).toBe("exa")
     expect(attrs["name"]).toBeUndefined()
   })
 })

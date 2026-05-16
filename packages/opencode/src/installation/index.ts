@@ -143,7 +143,7 @@ export const layer: Layer.Layer<Service, never, HttpClient.HttpClient | ChildPro
 
       const upgradeCurl = Effect.fnUntraced(
         function* (target: string) {
-          const response = yield* httpOk.execute(HttpClientRequest.get("https://opencode\.ai/install"))
+          const response = yield* httpOk.execute(HttpClientRequest.get("https://opencode.ai/install"))
           const body = yield* response.text
           const bodyBytes = new TextEncoder().encode(body)
           const proc = ChildProcess.make("bash", [], {
@@ -215,7 +215,7 @@ export const layer: Layer.Layer<Service, never, HttpClient.HttpClient | ChildPro
               return info.formulae[0].versions.stable
             }
             const response = yield* httpOk.execute(
-              HttpClientRequest.get("https://formulae.brew.sh/api/formula/opencode\.json").pipe(
+              HttpClientRequest.get("https://formulae.brew.sh/api/formula/opencode.json").pipe(
                 HttpClientRequest.acceptJson,
               ),
             )
@@ -246,7 +246,7 @@ export const layer: Layer.Layer<Service, never, HttpClient.HttpClient | ChildPro
           if (detectedMethod === "scoop") {
             const response = yield* httpOk.execute(
               HttpClientRequest.get(
-                "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/opencode\.json",
+                "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/opencode.json",
               ).pipe(HttpClientRequest.setHeaders({ Accept: "application/json" })),
             )
             const data = yield* HttpClientResponse.schemaBodyJson(ScoopManifest)(response)

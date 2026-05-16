@@ -328,7 +328,7 @@ function custom(dep: CustomDep): Record<string, CustomLoader> {
           }
 
           // Region resolution precedence (highest to lowest):
-          // 1. options.region from opencode\.json provider config
+          // 1. options.region from opencode.json provider config
           // 2. defaultRegion from AWS_REGION environment variable
           // 3. Default "us-east-1" (baked into defaultRegion)
           const region = options?.region ?? defaultRegion
@@ -411,7 +411,7 @@ function custom(dep: CustomDep): Record<string, CustomLoader> {
         autoload: false,
         options: {
           headers: {
-            "HTTP-Referer": "https://opencode\.ai/",
+            "HTTP-Referer": "https://opencode.ai/",
             "X-Title": "openbmw",
             "X-Source": "openbmw",
           },
@@ -422,7 +422,7 @@ function custom(dep: CustomDep): Record<string, CustomLoader> {
         autoload: false,
         options: {
           headers: {
-            "HTTP-Referer": "https://opencode\.ai/",
+            "HTTP-Referer": "https://opencode.ai/",
             "X-Title": "openbmw",
           },
         },
@@ -432,7 +432,7 @@ function custom(dep: CustomDep): Record<string, CustomLoader> {
         autoload: false,
         options: {
           headers: {
-            "HTTP-Referer": "https://opencode\.ai/",
+            "HTTP-Referer": "https://opencode.ai/",
             "X-Title": "openbmw",
           },
         },
@@ -442,7 +442,7 @@ function custom(dep: CustomDep): Record<string, CustomLoader> {
         autoload: false,
         options: {
           headers: {
-            "http-referer": "https://opencode\.ai/",
+            "http-referer": "https://opencode.ai/",
             "x-title": "openbmw",
           },
         },
@@ -540,7 +540,7 @@ function custom(dep: CustomDep): Record<string, CustomLoader> {
         autoload: false,
         options: {
           headers: {
-            "HTTP-Referer": "https://opencode\.ai/",
+            "HTTP-Referer": "https://opencode.ai/",
             "X-Title": "openbmw",
           },
         },
@@ -825,7 +825,7 @@ function custom(dep: CustomDep): Record<string, CustomLoader> {
         autoload: false,
         options: {
           headers: {
-            "HTTP-Referer": "https://opencode\.ai/",
+            "HTTP-Referer": "https://opencode.ai/",
             "X-Title": "openbmw",
           },
         },

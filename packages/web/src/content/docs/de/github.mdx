@@ -37,9 +37,9 @@ Oder Sie können es manuell einrichten.
 
 2. **Den Workflow hinzufügen**
 
-   Fügen Sie die folgende Workflowdatei zu `.github/workflows/opencode\.yml` in Ihrem Repository hinzu. Stellen Sie sicher, dass Sie in `env` die passenden Werte für `model` und `api_key` setzen.
+   Fügen Sie die folgende Workflowdatei zu `.github/workflows/opencode.yml` in Ihrem Repository hinzu. Stellen Sie sicher, dass Sie in `env` die passenden Werte für `model` und `api_key` setzen.
 
-   ```yml title=".github/workflows/opencode\.yml" {24,26}
+   ```yml title=".github/workflows/opencode.yml" {24,26}
    name: openbmw
 
    on:
@@ -254,7 +254,7 @@ Für `issues`-Ereignisse ist die Eingabe `prompt` **erforderlich**, da es keinen
 
 Überschreiben Sie die Standardaufforderung, um das Verhalten von OpenCode für Ihren Workflow anzupassen.
 
-```yaml title=".github/workflows/opencode\.yml"
+```yaml title=".github/workflows/opencode.yml"
 - uses: anomalyco/openbmw/github@latest
   with:
     model: anthropic/claude-sonnet-4-5

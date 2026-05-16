@@ -30,9 +30,9 @@ Bu dizinlerdeki dosyalar başlangıçta otomatik olarak yüklenir.
 
 Yapılandırma dosyanızda npm paketlerini belirtin.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "plugin": ["opencode-helicone-session", "opencode-wakatime", "@my-org/custom-plugin"]
 }
 ```
@@ -55,8 +55,8 @@ Hem normal hem de kapsamlı npm paketleri desteklenir.
 
 Eklentiler tüm kaynaklardan yüklenir ve tüm kancalar sırayla çalışır. Yükleme sırası şöyledir:
 
-1. Global config (`~/.config/openbmw/opencode\.json`)
-2. Project config (`opencode\.json`)
+1. Global config (`~/.config/openbmw/opencode.json`)
+2. Project config (`opencode.json`)
 3. Global eklenti dizini (`~/.config/openbmw/plugins/`)
 4. Proje eklenti dizini (`.openbmw/plugins/`)
 
@@ -330,7 +330,7 @@ export const MyPlugin = async ({ client }) => {
 }
 ```
 
-Seviyeler: `debug`, `info`, `warn`, `error`. Ayrıntılar için [SDK belgelerine](https://opencode\.ai/docs/sdk) bakın.
+Seviyeler: `debug`, `info`, `warn`, `error`. Ayrıntılar için [SDK belgelerine](https://opencode.ai/docs/sdk) bakın.
 
 ---
 

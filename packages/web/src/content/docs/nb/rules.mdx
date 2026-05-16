@@ -98,22 +98,22 @@ Den første matchende filen vinner i hver kategori. For eksempel, hvis du har b�
 
 ## Egendefinerte instruksjoner
 
-Du kan spesifisere egendefinerte instruksjonsfiler i din `opencode\.json` eller den globale `~/.config/openbmw/opencode\.json`. Dette lar deg og teamet ditt gjenbruke eksisterende regler i stedet for å måtte duplisere dem til AGENTS.md.
+Du kan spesifisere egendefinerte instruksjonsfiler i din `opencode.json` eller den globale `~/.config/openbmw/opencode.json`. Dette lar deg og teamet ditt gjenbruke eksisterende regler i stedet for å måtte duplisere dem til AGENTS.md.
 
 Eksempel:
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "instructions": ["CONTRIBUTING.md", "docs/guidelines.md", ".cursor/rules/*.md"]
 }
 ```
 
 Du kan også bruke eksterne URL-er for å laste instruksjoner fra nettet.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "instructions": ["https://raw.githubusercontent.com/my-org/shared-rules/main/style.md"]
 }
 ```
@@ -128,13 +128,13 @@ Alle instruksjonsfilene er kombinert med `AGENTS.md`-filene dine.
 
 Selv om OpenCode ikke automatisk analyserer filreferanser i `AGENTS.md`, kan du oppnå lignende funksjonalitet på to måter:
 
-### Bruker opencode\.json
+### Bruker opencode.json
 
-Den anbefalte tilnærmingen er å bruke feltet `instructions` i `opencode\.json`:
+Den anbefalte tilnærmingen er å bruke feltet `instructions` i `opencode.json`:
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "instructions": ["docs/development-standards.md", "test/testing-guidelines.md", "packages/*/AGENTS.md"]
 }
 ```
@@ -176,5 +176,5 @@ Denne tilnærmingen lar deg:
 - Sørge for at OpenCode laster filer kun når det er nødvendig for den spesifikke oppgaven
 
 :::tip
-For monorepos eller prosjekter med delte standarder er bruk av `opencode\.json` med glob-mønstre (som `packages/*/AGENTS.md`) mer vedlikeholdbart enn manuelle instruksjoner.
+For monorepos eller prosjekter med delte standarder er bruk av `opencode.json` med glob-mønstre (som `packages/*/AGENTS.md`) mer vedlikeholdbart enn manuelle instruksjoner.
 :::

@@ -26,9 +26,9 @@ Postavite JavaScript ili TypeScript datoteke u direktorij dodataka.
 
 Navedite npm pakete u vašoj konfiguracijskoj datoteci.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "plugin": ["opencode-helicone-session", "opencode-wakatime", "@my-org/custom-plugin"]
 }
 ```
@@ -49,8 +49,8 @@ Pregledajte dostupne dodatke u [ecosystem](/docs/ecosystem#plugins).
 
 Dodaci se učitavaju iz svih izvora i svi zakačnjaci rade u nizu. Redoslijed učitavanja je:
 
-1. Globalna konfiguracija (`~/.config/openbmw/opencode\.json`)
-2. Konfiguracija projekta (`opencode\.json`)
+1. Globalna konfiguracija (`~/.config/openbmw/opencode.json`)
+2. Konfiguracija projekta (`opencode.json`)
 3. Globalni direktorij dodataka (`~/.config/openbmw/plugins/`)
 4. Direktorij dodataka projekta (`.openbmw/plugins/`)
    Duplicirani npm paketi sa istim imenom i verzijom se učitavaju jednom. Međutim, lokalni dodatak i npm dodatak sa sličnim nazivima se učitavaju odvojeno.
@@ -316,7 +316,7 @@ export const MyPlugin = async ({ client }) => {
 }
 ```
 
-Nivoi su: `debug`, `info`, `warn`, `error`. Pogledajte [SDK dokumentaciju](https://opencode\.ai/docs/sdk) za detalje.
+Nivoi su: `debug`, `info`, `warn`, `error`. Pogledajte [SDK dokumentaciju](https://opencode.ai/docs/sdk) za detalje.
 
 ### Kuke za sažimanje
 

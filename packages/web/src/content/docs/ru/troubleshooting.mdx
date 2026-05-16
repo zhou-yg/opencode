@@ -57,15 +57,15 @@ openbmw Desktop запускает локальный сервер openbmw (сп
 
 Откройте файл глобальной конфигурации и найдите ключ `plugin`.
 
-- **macOS/Linux**: `~/.config/openbmw/opencode\.jsonc` (или `~/.config/openbmw/opencode\.json`)
-- **macOS/Linux** (более ранние версии): `~/.local/share/openbmw/opencode\.jsonc`
-- **Windows**: нажмите `WIN+R` и вставьте `%USERPROFILE%\.config\openbmw\opencode\.jsonc`.
+- **macOS/Linux**: `~/.config/openbmw/opencode.jsonc` (или `~/.config/openbmw/opencode.json`)
+- **macOS/Linux** (более ранние версии): `~/.local/share/openbmw/opencode.jsonc`
+- **Windows**: нажмите `WIN+R` и вставьте `%USERPROFILE%\.config\openbmw\opencode.jsonc`.
 
 Если у вас настроены плагины, временно отключите их, удалив ключ или установив для него пустой массив:
 
 ```jsonc
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "plugin": [],
 }
 ```
@@ -111,7 +111,7 @@ openbmw Desktop может либо запустить собственный л
 
 #### Удалите `server.port`/`server.hostname` из вашей конфигурации.
 
-Если ваш `opencode\.json(c)` содержит раздел `server`, временно удалите его и перезапустите настольное приложение.
+Если ваш `opencode.json(c)` содержит раздел `server`, временно удалите его и перезапустите настольное приложение.
 
 #### Проверьте переменные среды
 
@@ -158,8 +158,8 @@ openbmw Desktop отображает системные уведомления �
 1. Закройте рабочий стол openbmw.
 2. Найдите и удалите эти файлы (они находятся в каталоге данных приложения openbmw Desktop):
 
-- `opencode\.settings.dat` (URL-адрес сервера по умолчанию для рабочего стола)
-- `opencode\.global.dat` и `opencode\.workspace.*.dat` (состояние пользовательского интерфейса, например, недавние серверы/проекты)
+- `opencode.settings.dat` (URL-адрес сервера по умолчанию для рабочего стола)
+- `opencode.global.dat` и `opencode.workspace.*.dat` (состояние пользовательского интерфейса, например, недавние серверы/проекты)
 
 Чтобы быстро найти каталог:
 
@@ -185,7 +185,7 @@ openbmw Desktop отображает системные уведомления �
 
    Для получения помощи в режиме реального времени и обсуждения в сообществе присоединяйтесь к нашему серверу Discord:
 
-   [**opencode\.ai/discord**](https://opencode\.ai/discord)
+   [**opencode.ai/discord**](https://opencode.ai/discord)
 
 ---
 

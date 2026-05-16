@@ -57,15 +57,15 @@ Si la aplicación de escritorio falla al iniciarse, se bloquea o se comporta de 
 
 Abra su archivo de configuración global y busque una clave `plugin`.
 
-- **macOS/Linux**: `~/.config/openbmw/opencode\.jsonc` (o `~/.config/openbmw/opencode\.json`)
-- **macOS/Linux** (instalaciones anteriores): `~/.local/share/openbmw/opencode\.jsonc`
-- **Windows**: Presione `WIN+R` y pegue `%USERPROFILE%\.config\openbmw\opencode\.jsonc`
+- **macOS/Linux**: `~/.config/openbmw/opencode.jsonc` (o `~/.config/openbmw/opencode.json`)
+- **macOS/Linux** (instalaciones anteriores): `~/.local/share/openbmw/opencode.jsonc`
+- **Windows**: Presione `WIN+R` y pegue `%USERPROFILE%\.config\openbmw\opencode.jsonc`
 
 Si tiene complementos configurados, desactívelos temporalmente eliminando la clave o configurándola en una matriz vacía:
 
 ```jsonc
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "plugin": [],
 }
 ```
@@ -111,7 +111,7 @@ Desde la pantalla de inicio, haga clic en el nombre del servidor (con el punto d
 
 #### Elimina `server.port` / `server.hostname` de tu configuración
 
-Si su `opencode\.json(c)` contiene una sección `server`, elimínela temporalmente y reinicie la aplicación de escritorio.
+Si su `opencode.json(c)` contiene una sección `server`, elimínela temporalmente y reinicie la aplicación de escritorio.
 
 #### Verificar variables de entorno
 
@@ -158,8 +158,8 @@ Si la aplicación no se inicia y no puede borrar la configuración desde la inte
 1. Salga del escritorio OpenCode.
 2. Busque y elimine estos archivos (se encuentran en el directorio de datos de la aplicación de escritorio OpenCode):
 
-- `opencode\.settings.dat` (URL del servidor predeterminado de escritorio)
-- `opencode\.global.dat` y `opencode\.workspace.*.dat` (estado de la interfaz de usuario como servidores/proyectos recientes)
+- `opencode.settings.dat` (URL del servidor predeterminado de escritorio)
+- `opencode.global.dat` y `opencode.workspace.*.dat` (estado de la interfaz de usuario como servidores/proyectos recientes)
 
 Para encontrar el directorio rápidamente:
 
@@ -185,7 +185,7 @@ Si tiene problemas con OpenCode:
 
    Para obtener ayuda en tiempo real y debates comunitarios, únase a nuestro servidor de Discord:
 
-   [**opencode\.ai/discord**](https://opencode\.ai/discord)
+   [**opencode.ai/discord**](https://opencode.ai/discord)
 
 ---
 

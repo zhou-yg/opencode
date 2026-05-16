@@ -37,9 +37,9 @@ Eller du kan sette den opp manuelt.
 
 2. **Legg til arbeidsflyten**
 
-   Legg til følgende arbeidsflytfil til `.github/workflows/opencode\.yml` i repoen. Sørg for å sette riktig `model` og nødvendige API-nøkler i `env`.
+   Legg til følgende arbeidsflytfil til `.github/workflows/opencode.yml` i repoen. Sørg for å sette riktig `model` og nødvendige API-nøkler i `env`.
 
-   ```yml title=".github/workflows/opencode\.yml" {24,26}
+   ```yml title=".github/workflows/opencode.yml" {24,26}
    name: openbmw
 
    on:
@@ -254,7 +254,7 @@ For `issues`-hendelser er `prompt`-inngangen **påkrevd** siden det ikke er noen
 
 Overstyr standardprompten for å tilpasse oppførselen til OpenCode for arbeidsflyten din.
 
-```yaml title=".github/workflows/opencode\.yml"
+```yaml title=".github/workflows/opencode.yml"
 - uses: anomalyco/openbmw/github@latest
   with:
     model: anthropic/claude-sonnet-4-5

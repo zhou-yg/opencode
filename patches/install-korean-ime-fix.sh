@@ -20,7 +20,7 @@ NC='\033[0m'
 
 OPENCODE_DIR="${OPENCODE_DIR:-$HOME/.openbmw}"
 OPENCODE_SRC="${OPENCODE_SRC:-$HOME/.opencode-src}"
-FORK_REPO="${FORK_REPO:-https://github.com/claudianus/opencode\.git}"
+FORK_REPO="${FORK_REPO:-https://github.com/claudianus/opencode.git}"
 FORK_BRANCH="${FORK_BRANCH:-fix-zhipuai-coding-plan-thinking}"
 
 info()  { echo -e "${MUTED}$*${NC}"; }
@@ -98,7 +98,7 @@ fi
 
 if [ -f "$BUILT_BINARY" ]; then
   if [ -f "$OPENCODE_DIR/bin/openbmw" ]; then
-    cp "$OPENCODE_DIR/bin/openbmw" "$OPENCODE_DIR/bin/opencode\.bak.$(date +%Y%m%d%H%M%S)"
+    cp "$OPENCODE_DIR/bin/openbmw" "$OPENCODE_DIR/bin/opencode.bak.$(date +%Y%m%d%H%M%S)"
   fi
   cp "$BUILT_BINARY" "$OPENCODE_DIR/bin/openbmw"
   chmod +x "$OPENCODE_DIR/bin/openbmw"
@@ -114,7 +114,7 @@ echo ""
 ok "Done! Korean IME fix is now active."
 echo ""
 info "To uninstall and revert to the official release:"
-echo "  curl -fsSL https://opencode\.ai/install | bash"
+echo "  curl -fsSL https://opencode.ai/install | bash"
 echo ""
 info "To update (re-pull and rebuild):"
 echo "  $0"

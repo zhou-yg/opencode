@@ -37,9 +37,9 @@ openbmw github install
 
 2. **เพิ่มขั้นตอนการทำงาน**
 
-   เพิ่มไฟล์เวิร์กโฟลว์ต่อไปนี้ไปที่ `.github/workflows/opencode\.yml` ใน repo ของคุณ ตรวจสอบให้แน่ใจว่าได้ตั้งค่า `model` ที่เหมาะสมและคีย์ API ที่จำเป็นใน `env`
+   เพิ่มไฟล์เวิร์กโฟลว์ต่อไปนี้ไปที่ `.github/workflows/opencode.yml` ใน repo ของคุณ ตรวจสอบให้แน่ใจว่าได้ตั้งค่า `model` ที่เหมาะสมและคีย์ API ที่จำเป็นใน `env`
 
-   ```yml title=".github/workflows/opencode\.yml" {24,26}
+   ```yml title=".github/workflows/opencode.yml" {24,26}
    name: openbmw
 
    on:
@@ -254,7 +254,7 @@ jobs:
 
 แทนที่ข้อความแจ้งเริ่มต้นเพื่อปรับแต่งการทำงานของ OpenCode สำหรับเวิร์กโฟลว์ของคุณ
 
-```yaml title=".github/workflows/opencode\.yml"
+```yaml title=".github/workflows/opencode.yml"
 - uses: anomalyco/openbmw/github@latest
   with:
     model: anthropic/claude-sonnet-4-5

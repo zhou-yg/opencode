@@ -11,9 +11,9 @@ Możesz dostosować OpenCode za pomocą pliku konfiguracyjnego JSON.
 
 OpenCode obsługuje formaty **JSON** i **JSONC** (JSON z komentarzami).
 
-```jsonc title="opencode\.jsonc"
+```jsonc title="opencode.jsonc"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   // Theme configuration
   "theme": "openbmw",
   "model": "anthropic/claude-sonnet-4-5",
@@ -42,9 +42,9 @@ Na przykład, jeśli konfiguracja globalna ustawi `theme: "openbmw"` i `autoupda
 Źródła konfiguracji są ładowane w następującej kolejności (źródła występujące później mają pierwszeństwo):
 
 1. **Konfiguracja zdalna** (z `.well-known/openbmw`) – ustawienia wymuszane przez organizację
-2. **Konfiguracja globalna** (`~/.config/openbmw/opencode\.json`) – preferencje użytkownika
+2. **Konfiguracja globalna** (`~/.config/openbmw/opencode.json`) – preferencje użytkownika
 3. **Konfiguracja niestandardowa** (zmienna `OPENCODE_CONFIG`) — jawne nadpisanie
-4. **Konfiguracja projektu** (`opencode\.json` w projekcie) - ustawienia specyficzne dla projektu
+4. **Konfiguracja projektu** (`opencode.json` w projekcie) - ustawienia specyficzne dla projektu
 5. **Katalogi `.openbmw`** - agenci, polecenia, umiejętności
 6. **Konfiguracja wbudowana** (zmienna `OPENCODE_CONFIG_CONTENT`) — nadpisanie środowiska uruchomieniowego
 
@@ -78,7 +78,7 @@ Na przykład, jeśli Twoja organizacja udostępnia serwery MCP, które są domy�
 
 Możesz włączyć serwer w konfiguracji projektu:
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
   "mcp": {
     "jira": {
@@ -94,7 +94,7 @@ Możesz włączyć serwer w konfiguracji projektu:
 
 ### Globalna
 
-Umieść swoją globalną konfigurację OpenCode w `~/.config/openbmw/opencode\.json`. Użyj jej do ustawień ogólnych dla użytkownika, takich jak dostawcy, modele i uprawnienia.
+Umieść swoją globalną konfigurację OpenCode w `~/.config/openbmw/opencode.json`. Użyj jej do ustawień ogólnych dla użytkownika, takich jak dostawcy, modele i uprawnienia.
 
 Dla ustawień specyficznych dla TUI, użyj `~/.config/openbmw/tui.json`.
 
@@ -104,7 +104,7 @@ Konfiguracja globalna ma pierwszeństwo przed konfiguracją zdalną.
 
 ### Projekt
 
-Dodaj `opencode\.json` w katalogu głównym projektu. Konfiguracja projektu ma najwyższy priorytet wśród plików konfiguracyjnych — nadpisuje konfiguracje globalne i zdalne.
+Dodaj `opencode.json` w katalogu głównym projektu. Konfiguracja projektu ma najwyższy priorytet wśród plików konfiguracyjnych — nadpisuje konfiguracje globalne i zdalne.
 
 Dla ustawień TUI specyficznych dla projektu, dodaj plik `tui.json` obok niego.
 
@@ -146,7 +146,7 @@ Katalog niestandardowy jest ładowany po globalnej konfiguracji i katalogach `.o
 
 ## Schemat
 
-Plik konfiguracyjny ma schemat JSON dostępny pod adresem [**`opencode\.ai/config.json`**](https://opencode\.ai/config.json).
+Plik konfiguracyjny ma schemat JSON dostępny pod adresem [**`opencode.ai/config.json`**](https://opencode.ai/config.json).
 
 Twój edytor powinien zapewniać walidację i autouzupełnianie na podstawie tego schematu.
 
@@ -158,7 +158,7 @@ Użyj dedykowanego pliku `tui.json` (lub `tui.jsonc`) dla ustawień specyficznyc
 
 ```json title="tui.json"
 {
-  "$schema": "https://opencode\.ai/tui.json",
+  "$schema": "https://opencode.ai/tui.json",
   "scroll_speed": 3,
   "scroll_acceleration": {
     "enabled": true
@@ -169,7 +169,7 @@ Użyj dedykowanego pliku `tui.json` (lub `tui.jsonc`) dla ustawień specyficznyc
 
 Użyj `OPENCODE_TUI_CONFIG`, aby wskazać niestandardowy plik konfiguracyjny TUI.
 
-Przestarzałe klucze `theme`, `keybinds` i `tui` w `opencode\.json` są wycofywane i automatycznie migrowane, gdy to możliwe.
+Przestarzałe klucze `theme`, `keybinds` i `tui` w `opencode.json` są wycofywane i automatycznie migrowane, gdy to możliwe.
 
 [Dowiedz się więcej o konfiguracji TUI tutaj](/docs/tui#configure).
 
@@ -179,9 +179,9 @@ Przestarzałe klucze `theme`, `keybinds` i `tui` w `opencode\.json` są wycofywa
 
 Możesz skonfigurować serwer dla `openbmw serve` i `openbmw web` za pomocą opcji `server`.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "server": {
     "port": 4096,
     "hostname": "0.0.0.0",
@@ -197,7 +197,7 @@ Dostępne opcje:
 - `port` - Port do nasłuchiwania.
 - `hostname` — Nazwa hosta, z którą należy się powiązać. Gdy `mdns` jest włączone i nie ustawiono innej nazwy hosta, domyślnie jest to `0.0.0.0`.
 - `mdns` - Włącz wykrywanie usług mDNS. Dzięki temu inne urządzenia w sieci mogą łatwo znaleźć Twój serwer OpenCode.
-- `mdnsDomain` - Niestandardowa nazwa domeny dla usług mDNS. Domyślnie `opencode\.local`. Przydatne do uruchamiania wielu instancji w tej samej sieci.
+- `mdnsDomain` - Niestandardowa nazwa domeny dla usług mDNS. Domyślnie `opencode.local`. Przydatne do uruchamiania wielu instancji w tej samej sieci.
 - `cors` - Dozwolone źródła CORS podczas korzystania z serwera HTTP z przeglądarki. Wartość musi być listą źródeł (schemat + host + opcjonalny port), np. `https://app.example.com`.
 
 [Dowiedz się więcej o serwerze](/docs/server).
@@ -208,9 +208,9 @@ Dostępne opcje:
 
 Kontroluj, które narzędzia są dostępne dla LLM, za pomocą opcji `tools`.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "tools": {
     "write": false,
     "bash": false
@@ -226,9 +226,9 @@ Kontroluj, które narzędzia są dostępne dla LLM, za pomocą opcji `tools`.
 
 Możesz skonfigurować dostawców i modele, których chcesz używać, za pomocą opcji `provider`, `model` i `small_model`.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "provider": {},
   "model": "anthropic/claude-sonnet-4-5",
   "small_model": "anthropic/claude-haiku-4-5"
@@ -239,9 +239,9 @@ Opcja `small_model` konfiguruje oddzielny model do lżejszych zadań, takich jak
 
 Opcje dostawcy mogą zawierać `timeout` i `setCacheKey`:
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "provider": {
     "anthropic": {
       "options": {
@@ -268,9 +268,9 @@ Niektórzy dostawcy obsługują dodatkowe opcje konfiguracji poza `timeout` i `a
 
 Amazon Bedrock umożliwia konfigurację połączenia z AWS:
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "provider": {
     "amazon-bedrock": {
       "options": {
@@ -301,7 +301,7 @@ Ustaw motyw interfejsu użytkownika w `tui.json`.
 
 ```json title="tui.json"
 {
-  "$schema": "https://opencode\.ai/tui.json",
+  "$schema": "https://opencode.ai/tui.json",
   "theme": "tokyonight"
 }
 ```
@@ -314,9 +314,9 @@ Ustaw motyw interfejsu użytkownika w `tui.json`.
 
 Możesz zdefiniować i skonfigurować agentów za pomocą opcji `agent`.
 
-```jsonc title="opencode\.jsonc"
+```jsonc title="opencode.jsonc"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "agent": {
     "code-reviewer": {
       "description": "Reviews code for best practices and potential issues",
@@ -340,9 +340,9 @@ Możesz także definiować agentów przy użyciu plików markdown w `~/.config/o
 
 Domyślnego agenta można ustawić za pomocą opcji `default_agent`. Określa to agenta, który jest używany, jeśli nie wybrano żadnego innego.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "default_agent": "plan"
 }
 ```
@@ -357,9 +357,9 @@ Dotyczy to wszystkich interfejsów: TUI, CLI (`openbmw run`), aplikacji desktopo
 
 Możesz skonfigurować [udostępnianie](/docs/share) za pomocą opcji `share`.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "share": "manual"
 }
 ```
@@ -378,9 +378,9 @@ Domyślnie ustawiony jest tryb ręczny, w którym należy jawnie udostępniać r
 
 Możesz zdefiniować niestandardowe polecenia dla powtarzalnych zadań za pomocą opcji `command`.
 
-```jsonc title="opencode\.jsonc"
+```jsonc title="opencode.jsonc"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "command": {
     "test": {
       "template": "Run the full test suite with coverage report and show any failures.\nFocus on the failing tests and suggest fixes.",
@@ -406,7 +406,7 @@ Dostosuj skróty klawiszowe w `tui.json`.
 
 ```json title="tui.json"
 {
-  "$schema": "https://opencode\.ai/tui.json",
+  "$schema": "https://opencode.ai/tui.json",
   "keybinds": {}
 }
 ```
@@ -419,9 +419,9 @@ Dostosuj skróty klawiszowe w `tui.json`.
 
 OpenCode może automatycznie pobierać nowe wersje. Możesz to kontrolować za pomocą opcji `autoupdate`.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "autoupdate": false
 }
 ```
@@ -435,9 +435,9 @@ Działa to tylko wtedy, gdy OpenCode nie został zainstalowany przez menedżera 
 
 Możesz skonfigurować formatery kodu za pomocą opcji `formatter`.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "formatter": {
     "prettier": {
       "disabled": true
@@ -463,9 +463,9 @@ Domyślnie OpenCode **zezwala na wszystkie działania** bez konieczności zatwie
 
 Na przykład, aby wymagać zatwierdzenia dla narzędzi `edit` i `bash`:
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "permission": {
     "edit": "ask",
     "bash": "ask"
@@ -481,9 +481,9 @@ Na przykład, aby wymagać zatwierdzenia dla narzędzi `edit` i `bash`:
 
 Możesz kontrolować zachowanie kompaktowania kontekstu za pomocą opcji `compaction`.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "compaction": {
     "auto": true,
     "prune": true
@@ -500,9 +500,9 @@ Możesz kontrolować zachowanie kompaktowania kontekstu za pomocą opcji `compac
 
 Skonfiguruj ignorowane wzorce plików dla obserwatora plików za pomocą `watcher`.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "watcher": {
     "ignore": ["node_modules/**", "dist/**", ".git/**"]
   }
@@ -517,9 +517,9 @@ Wzorce są zgodne ze składnią glob. Użyj tej opcji, aby wykluczyć często zm
 
 Skonfiguruj serwery MCP, których chcesz używać, za pomocą opcji `mcp`.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "mcp": {}
 }
 ```
@@ -534,9 +534,9 @@ Skonfiguruj serwery MCP, których chcesz używać, za pomocą opcji `mcp`.
 
 Umieść pliki wtyczek w `.openbmw/plugins/` lub `~/.config/openbmw/plugins/`. Możesz także załadować wtyczkę z npm za pomocą opcji `plugin`.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "plugin": ["opencode-helicone-session", "@my-org/custom-plugin"]
 }
 ```
@@ -549,9 +549,9 @@ Umieść pliki wtyczek w `.openbmw/plugins/` lub `~/.config/openbmw/plugins/`. M
 
 Określ pliki instrukcji dla modelu, używając opcji `instructions`.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "instructions": ["CONTRIBUTING.md", "docs/guidelines.md", ".cursor/rules/*.md"]
 }
 ```
@@ -564,9 +564,9 @@ Załadowane pliki są dołączane do promptu systemowego. Obsługuje wzorce glob
 
 Zapobiegaj automatycznemu ładowaniu dostawców za pomocą opcji `disabled_providers`. Jest to przydatne, gdy chcesz wyłączyć niektórych dostawców, nawet jeśli masz dla nich dane uwierzytelniające.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "disabled_providers": ["openai", "gemini"]
 }
 ```
@@ -587,9 +587,9 @@ Opcja `disabled_providers` przyjmuje tablicę identyfikatorów dostawców. Gdy d
 
 Możesz określić listę dozwolonych dostawców za pomocą `enabled_providers`. Po ustawieniu, tylko wymienieni dostawcy będą ładowani.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "enabled_providers": ["anthropic", "openai"]
 }
 ```
@@ -608,9 +608,9 @@ Jeśli dostawca jest wymieniony zarówno w `enabled_providers`, jak i `disabled_
 
 Klucz `experimental` zawiera opcje, które są we wczesnej fazie rozwoju.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "experimental": {}
 }
 ```
@@ -631,9 +631,9 @@ Możesz używać specjalnej składni w plikach konfiguracyjnych, aby odwoływać
 
 Użyj `{env:VARIABLE_NAME}`, aby wstawić wartość zmiennej środowiskowej:
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "model": "{env:OPENCODE_MODEL}",
   "provider": {
     "anthropic": {
@@ -654,9 +654,9 @@ Jeśli zmienna środowiskowa nie jest ustawiona, zostanie zastąpiona pustym ci�
 
 Użyj `{file:path/to/file}`, aby wstawić zawartość pliku:
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "instructions": ["./custom-instructions.md"],
   "provider": {
     "openai": {

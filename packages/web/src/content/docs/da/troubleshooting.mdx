@@ -57,15 +57,15 @@ Hvis skrivebordsappen går ned ved opstart, hænger eller opfører sig mærkelig
 
 Åbn den globale konfigurationsfil og se efter en `plugin`-nøgle.
 
-- **macOS/Linux**: `~/.config/openbmw/opencode\.jsonc` (eller `~/.config/openbmw/opencode\.json`)
-- **macOS/Linux** (ældre installationer): `~/.local/share/openbmw/opencode\.jsonc`
-- **Windows**: Tryk `WIN+R` og indsæt `%USERPROFILE%\.config\openbmw\opencode\.jsonc`
+- **macOS/Linux**: `~/.config/openbmw/opencode.jsonc` (eller `~/.config/openbmw/opencode.json`)
+- **macOS/Linux** (ældre installationer): `~/.local/share/openbmw/opencode.jsonc`
+- **Windows**: Tryk `WIN+R` og indsæt `%USERPROFILE%\.config\openbmw\opencode.jsonc`
 
 Hvis du har konfigureret plugins, deaktiver dem midlertidigt ved at fjerne nøglen eller sætte den til et tomt array:
 
 ```jsonc
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "plugin": [],
 }
 ```
@@ -111,7 +111,7 @@ Fra startskærmen klikker du på servernavnet (med statusprikken) for at åbne s
 
 #### Fjern `server.port` / `server.hostname` fra din konfiguration
 
-Hvis `opencode\.json(c)` indeholder en `server`-del, fjern den midlertidigt og start skrivebordsappen på ny.
+Hvis `opencode.json(c)` indeholder en `server`-del, fjern den midlertidigt og start skrivebordsappen på ny.
 
 #### Tjek miljøvariabler
 
@@ -158,8 +158,8 @@ Hvis appen ikke starter og du ikke kan slette indstillingerne fra UI, nulstil sk
 1. Afslut OpenCode Desktop.
 2. Find og slet disse filer (de findes i OpenCode Desktop-appens datamappe):
 
-- `opencode\.settings.dat` (skrivebordsstandardserver URL)
-- `opencode\.global.dat` og `opencode\.workspace.*.dat` (UI tilstand som nylige servere/projekter)
+- `opencode.settings.dat` (skrivebordsstandardserver URL)
+- `opencode.global.dat` og `opencode.workspace.*.dat` (UI tilstand som nylige servere/projekter)
 
 Sådan finder du mappen hurtigt:
 
@@ -185,7 +185,7 @@ Hvis du oplever problemer med OpenCode:
 
    For hjælp i realtid og fællesskabsdiskussion, bliv en del af vores Discord-server:
 
-   [**opencode\.ai/discord**](https://opencode\.ai/discord)
+   [**opencode.ai/discord**](https://opencode.ai/discord)
 
 ---
 

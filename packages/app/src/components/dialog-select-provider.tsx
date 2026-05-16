@@ -66,7 +66,7 @@ export const DialogSelectProvider: Component = () => {
             <ProviderIcon data-slot="list-item-extra-icon" id={i.id} />
             <span>{i.name}</span>
             <Show when={i.id === "openbmw"}>
-              <div class="text-14-regular text-text-weak">{language.t("dialog.provider.opencode\.tagline")}</div>
+              <div class="text-14-regular text-text-weak">{language.t("dialog.provider.opencode.tagline")}</div>
             </Show>
             <Show when={i.id === CUSTOM_ID}>
               <Tag>{language.t("settings.providers.tag.custom")}</Tag>

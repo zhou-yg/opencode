@@ -57,15 +57,15 @@ OpenCode Desktop は、ローカル OpenCode サーバー (`opencode-cli` サイ
 
 グローバル設定ファイルを開き、`plugin` キーを探します。
 
-- **macOS/Linux**: `~/.config/openbmw/opencode\.jsonc` (または `~/.config/openbmw/opencode\.json`)
-- **macOS/Linux** (古いインストール): `~/.local/share/openbmw/opencode\.jsonc`
-- **Windows**: `WIN+R` を押して `%USERPROFILE%\.config\openbmw\opencode\.jsonc` を貼り付けます
+- **macOS/Linux**: `~/.config/openbmw/opencode.jsonc` (または `~/.config/openbmw/opencode.json`)
+- **macOS/Linux** (古いインストール): `~/.local/share/openbmw/opencode.jsonc`
+- **Windows**: `WIN+R` を押して `%USERPROFILE%\.config\openbmw\opencode.jsonc` を貼り付けます
 
 プラグインを構成している場合は、キーを削除するか空の配列に設定して、プラグインを一時的に無効にします。
 
 ```jsonc
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "plugin": [],
 }
 ```
@@ -111,7 +111,7 @@ OpenCode Desktop は、独自のローカルサーバー (デフォルト) を�
 
 #### 設定から `server.port` / `server.hostname` を削除します
 
-`opencode\.json(c)` に `server` セクションが含まれている場合は、それを一時的に削除し、デスクトップアプリを再起動します。
+`opencode.json(c)` に `server` セクションが含まれている場合は、それを一時的に削除し、デスクトップアプリを再起動します。
 
 #### 環境変数を確認する
 
@@ -158,8 +158,8 @@ OpenCode Desktop では、次の場合にのみシステム通知が表示され
 1. OpenCode デスクトップを終了します。
 2. これらのファイルを見つけて削除します (これらのファイルは OpenCode デスクトップアプリのデータディレクトリにあります)。
 
-- `opencode\.settings.dat` (デスクトップのデフォルトサーバー URL)
-- `opencode\.global.dat` および `opencode\.workspace.*.dat` (最近のサーバー/プロジェクトなどの UI 状態)
+- `opencode.settings.dat` (デスクトップのデフォルトサーバー URL)
+- `opencode.global.dat` および `opencode.workspace.*.dat` (最近のサーバー/プロジェクトなどの UI 状態)
 
 ディレクトリをすばやく見つけるには:
 
@@ -185,7 +185,7 @@ OpenCode で問題が発生している場合:
 
 リアルタイムのヘルプやコミュニティのディスカッションについては、Discord サーバーに参加してください。
 
-[**opencode\.ai/discord**](https://opencode\.ai/discord)
+[**opencode.ai/discord**](https://opencode.ai/discord)
 
 ---
 

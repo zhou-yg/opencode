@@ -57,15 +57,15 @@ OpenCode Desktop 会在后台运行一个本地 OpenCode 服务器（即 `openco
 
 打开你的全局配置文件，查找 `plugin` 键。
 
-- **macOS/Linux**: `~/.config/openbmw/opencode\.jsonc`（或 `~/.config/openbmw/opencode\.json`）
-- **macOS/Linux**（旧版安装）: `~/.local/share/openbmw/opencode\.jsonc`
-- **Windows**: 按 `WIN+R` 并粘贴 `%USERPROFILE%\.config\openbmw\opencode\.jsonc`
+- **macOS/Linux**: `~/.config/openbmw/opencode.jsonc`（或 `~/.config/openbmw/opencode.json`）
+- **macOS/Linux**（旧版安装）: `~/.local/share/openbmw/opencode.jsonc`
+- **Windows**: 按 `WIN+R` 并粘贴 `%USERPROFILE%\.config\openbmw\opencode.jsonc`
 
 如果你配置了插件，请通过移除该键或将其设置为空数组来临时禁用它们：
 
 ```jsonc
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "plugin": [],
 }
 ```
@@ -111,7 +111,7 @@ OpenCode Desktop 可以启动自己的本地服务器（默认行为），也可
 
 #### 从配置中移除 `server.port` / `server.hostname`
 
-如果你的 `opencode\.json(c)` 包含 `server` 部分，请临时移除该部分并重新启动桌面应用。
+如果你的 `opencode.json(c)` 包含 `server` 部分，请临时移除该部分并重新启动桌面应用。
 
 #### 检查环境变量
 
@@ -158,8 +158,8 @@ OpenCode Desktop 仅在以下情况下显示系统通知：
 1. 退出 OpenCode Desktop。
 2. 找到并删除以下文件（它们位于 OpenCode Desktop 应用数据目录中）：
 
-- `opencode\.settings.dat`（桌面默认服务器 URL）
-- `opencode\.global.dat` 和 `opencode\.workspace.*.dat`（UI 状态，如最近的服务器/项目）
+- `opencode.settings.dat`（桌面默认服务器 URL）
+- `opencode.global.dat` 和 `opencode.workspace.*.dat`（UI 状态，如最近的服务器/项目）
 
 快速找到该目录：
 
@@ -185,7 +185,7 @@ OpenCode Desktop 仅在以下情况下显示系统通知：
 
    如需实时帮助和社区讨论，请加入我们的 Discord 服务器：
 
-   [**opencode\.ai/discord**](https://opencode\.ai/discord)
+   [**opencode.ai/discord**](https://opencode.ai/discord)
 
 ---
 

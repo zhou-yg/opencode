@@ -248,7 +248,7 @@ async function listenLegacy(opts: ListenOptions): Promise<Listener> {
 async function listenHttpApi(opts: ListenOptions, selection: ServerBackend.Selection): Promise<Listener> {
   log.info("server backend selected", {
     ...ServerBackend.attributes(selection),
-    "opencode\.server.runtime": HttpApiServer.name,
+    "opencode.server.runtime": HttpApiServer.name,
   })
 
   const buildLayer = (port: number) =>

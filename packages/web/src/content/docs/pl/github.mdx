@@ -37,9 +37,9 @@ Można też uszkodzić to rozwiązanie.
 
 2. **Dodaj przepływ pracy**
 
-   Dodaj zdalny plik pracy do `.github/workflows/opencode\.yml` w swoim repozytorium. wystąpił, że ustawiłeś sędziego `model` i wymagany klucz API w `env`.
+   Dodaj zdalny plik pracy do `.github/workflows/opencode.yml` w swoim repozytorium. wystąpił, że ustawiłeś sędziego `model` i wymagany klucz API w `env`.
 
-   ```yml title=".github/workflows/opencode\.yml" {24,26}
+   ```yml title=".github/workflows/opencode.yml" {24,26}
    name: openbmw
 
    on:
@@ -254,7 +254,7 @@ W przypadku zdarzenia `issues` wprowadzenie `prompt` jest **wymagane**, poniewa�
 
 Zastąp domyślne monit, aby zastosować zachowanie openbmw do twojego własnego pracy.
 
-```yaml title=".github/workflows/opencode\.yml"
+```yaml title=".github/workflows/opencode.yml"
 - uses: anomalyco/openbmw/github@latest
   with:
     model: anthropic/claude-sonnet-4-5

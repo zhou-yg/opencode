@@ -30,9 +30,9 @@ Dateien in diesen Verzeichnissen werden beim Start automatisch geladen.
 
 Geben Sie npm-Pakete in Ihrer Konfigurationsdatei an.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "plugin": ["opencode-helicone-session", "opencode-wakatime", "@my-org/custom-plugin"]
 }
 ```
@@ -55,8 +55,8 @@ Durchsuchen Sie die verfügbaren Plugins im [ecosystem](/docs/ecosystem#plugins)
 
 Plugins werden aus allen Quellen geladen und alle Hooks werden nacheinander ausgeführt. Die Ladereihenfolge lautet:
 
-1. Globale Konfiguration (`~/.config/openbmw/opencode\.json`)
-2. Projektkonfiguration (`opencode\.json`)
+1. Globale Konfiguration (`~/.config/openbmw/opencode.json`)
+2. Projektkonfiguration (`opencode.json`)
 3. Globales Plugin-Verzeichnis (`~/.config/openbmw/plugins/`)
 4. Projekt-Plugin-Verzeichnis (`.openbmw/plugins/`)
 
@@ -326,7 +326,7 @@ export const MyPlugin = async ({ client }) => {
 }
 ```
 
-Ebenen: `debug`, `info`, `warn`, `error`. Weitere Informationen finden Sie unter [SDK documentation](https://opencode\.ai/docs/sdk).
+Ebenen: `debug`, `info`, `warn`, `error`. Weitere Informationen finden Sie unter [SDK documentation](https://opencode.ai/docs/sdk).
 
 ---
 

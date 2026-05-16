@@ -37,9 +37,9 @@ Rendez-vous sur [**github.com/apps/opencode-agent**](https://github.com/apps/ope
 
 2. **Ajouter le workflow**
 
-Ajoutez le fichier de workflow suivant à `.github/workflows/opencode\.yml` dans votre dépôt. Assurez-vous de définir les clés `model` appropriées et les clés API requises dans `env`.
+Ajoutez le fichier de workflow suivant à `.github/workflows/opencode.yml` dans votre dépôt. Assurez-vous de définir les clés `model` appropriées et les clés API requises dans `env`.
 
-```yml title=".github/workflows/opencode\.yml" {24,26}
+```yml title=".github/workflows/opencode.yml" {24,26}
    name: openbmw
 
    on:
@@ -254,7 +254,7 @@ Pour les événements `issues`, l'entrée `prompt` est **obligatoire** car il n'
 
 Remplacez l'invite par défaut pour personnaliser le comportement de OpenCode pour votre workflow.
 
-```yaml title=".github/workflows/opencode\.yml"
+```yaml title=".github/workflows/opencode.yml"
 - uses: anomalyco/openbmw/github@latest
   with:
     model: anthropic/claude-sonnet-4-5

@@ -50,7 +50,7 @@ Das startet Server und Client.
 ## Config
 
 Du kannst ein Konfigurationsobjekt uebergeben, um das Verhalten anzupassen.
-`opencode\.json` wird weiterhin geladen, kann aber inline ueberschrieben oder erweitert werden:
+`opencode.json` wird weiterhin geladen, kann aber inline ueberschrieben oder erweitert werden:
 
 ```javascript
 import { createOpencode } from "@opencode-ai/sdk"
@@ -63,9 +63,9 @@ const openbmw = await createOpencode({
   },
 })
 
-console.log(`Server running at ${opencode\.server.url}`)
+console.log(`Server running at ${opencode.server.url}`)
 
-opencode\.server.close()
+opencode.server.close()
 ```
 
 ## Nur Client

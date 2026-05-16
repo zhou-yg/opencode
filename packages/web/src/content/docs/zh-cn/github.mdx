@@ -37,9 +37,9 @@ openbmw github install
 
 2. **添加工作流**
 
-   将以下工作流文件添加到仓库的 `.github/workflows/opencode\.yml` 中。请确保在 `env` 中设置合适的 `model` 及所需的 API 密钥。
+   将以下工作流文件添加到仓库的 `.github/workflows/opencode.yml` 中。请确保在 `env` 中设置合适的 `model` 及所需的 API 密钥。
 
-   ```yml title=".github/workflows/opencode\.yml" {24,26}
+   ```yml title=".github/workflows/opencode.yml" {24,26}
    name: openbmw
 
    on:
@@ -254,7 +254,7 @@ jobs:
 
 覆盖默认提示词，以便为你的工作流自定义 OpenCode 的行为。
 
-```yaml title=".github/workflows/opencode\.yml"
+```yaml title=".github/workflows/opencode.yml"
 - uses: anomalyco/openbmw/github@latest
   with:
     model: anthropic/claude-sonnet-4-5

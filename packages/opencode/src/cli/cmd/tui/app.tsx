@@ -592,7 +592,7 @@ function App(props: { onSnapshot?: () => Promise<string[]> }) {
     {
       title: "View status",
       keybind: "status_view",
-      value: "opencode\.status",
+      value: "opencode.status",
       slash: {
         name: "status",
       },
@@ -647,7 +647,7 @@ function App(props: { onSnapshot?: () => Promise<string[]> }) {
       title: "Open docs",
       value: "docs.open",
       onSelect: () => {
-        open("https://opencode\.ai/docs").catch(() => {})
+        open("https://opencode.ai/docs").catch(() => {})
         dialog.clear()
       },
       category: "System",

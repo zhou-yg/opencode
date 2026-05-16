@@ -37,9 +37,9 @@ openbmw github install
 
 2. **ワークフローを追加**
 
-次のワークフローファイルをリポジトリの `.github/workflows/opencode\.yml` に追加します。適切な `model` と必要な API キーを `env` に設定してください。
+次のワークフローファイルをリポジトリの `.github/workflows/opencode.yml` に追加します。適切な `model` と必要な API キーを `env` に設定してください。
 
-```yml title=".github/workflows/opencode\.yml" {24,26}
+```yml title=".github/workflows/opencode.yml" {24,26}
    name: openbmw
 
    on:
@@ -254,7 +254,7 @@ jobs:
 
 デフォルトのプロンプトをオーバーライドして、ワークフローに合わせて OpenCode の動作をカスタマイズします。
 
-```yaml title=".github/workflows/opencode\.yml"
+```yaml title=".github/workflows/opencode.yml"
 - uses: anomalyco/openbmw/github@latest
   with:
     model: anthropic/claude-sonnet-4-5

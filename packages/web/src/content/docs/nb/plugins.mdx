@@ -30,9 +30,9 @@ Filer i disse katalogene lastes automatisk ved oppstart.
 
 Spesifiser npm-pakker i konfigurasjonsfilen.
 
-```json title="opencode\.json"
+```json title="opencode.json"
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "plugin": ["opencode-helicone-session", "opencode-wakatime", "@my-org/custom-plugin"]
 }
 ```
@@ -55,8 +55,8 @@ Bla gjennom tilgjengelige plugins i [økosystemet](/docs/ecosystem#plugins).
 
 Plugins lastes inn fra alle kilder og alle kroker kjøres i rekkefølge. Lastrekkefølgen er:
 
-1. Global konfigurasjon (`~/.config/openbmw/opencode\.json`)
-2. Prosjektkonfigurasjon (`opencode\.json`)
+1. Global konfigurasjon (`~/.config/openbmw/opencode.json`)
+2. Prosjektkonfigurasjon (`opencode.json`)
 3. Global plugin-katalog (`~/.config/openbmw/plugins/`)
 4. Prosjektpluginkatalog (`.openbmw/plugins/`)
 
@@ -331,7 +331,7 @@ export const MyPlugin = async ({ client }) => {
 }
 ```
 
-Nivåer: `debug`, `info`, `warn`, `error`. Se [SDK dokumentasjon](https://opencode\.ai/docs/sdk) for detaljer.
+Nivåer: `debug`, `info`, `warn`, `error`. Se [SDK dokumentasjon](https://opencode.ai/docs/sdk) for detaljer.
 
 ---
 

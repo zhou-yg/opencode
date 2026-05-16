@@ -37,9 +37,9 @@ Ou você pode configurá-lo manualmente.
 
 2. **Adicione o fluxo de trabalho**
 
-   Adicione o seguinte arquivo de fluxo de trabalho em `.github/workflows/opencode\.yml` no seu repositório. Certifique-se de definir o `model` apropriado e as chaves de API necessárias em `env`.
+   Adicione o seguinte arquivo de fluxo de trabalho em `.github/workflows/opencode.yml` no seu repositório. Certifique-se de definir o `model` apropriado e as chaves de API necessárias em `env`.
 
-   ```yml title=".github/workflows/opencode\.yml" {24,26}
+   ```yml title=".github/workflows/opencode.yml" {24,26}
    name: openbmw
 
    on:
@@ -254,7 +254,7 @@ Para eventos de `issues`, a entrada `prompt` é **obrigatória** uma vez que nã
 
 Substitua o prompt padrão para personalizar o comportamento do openbmw para seu fluxo de trabalho.
 
-```yaml title=".github/workflows/opencode\.yml"
+```yaml title=".github/workflows/opencode.yml"
 - uses: anomalyco/openbmw/github@latest
   with:
     model: anthropic/claude-sonnet-4-5

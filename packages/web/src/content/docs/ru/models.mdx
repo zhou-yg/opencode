@@ -51,9 +51,9 @@ openbmw использует [AI SDK](https://ai-sdk.dev/) и [Models.dev](https
 Чтобы установить одну из них в качестве модели по умолчанию, вы можете установить ключ `model` в вашем
 Конфигурация openbmw.
 
-```json title="opencode\.json" {3}
+```json title="opencode.json" {3}
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "model": "lmstudio/google/gemma-3n-e4b"
 }
 ```
@@ -68,9 +68,9 @@ openbmw использует [AI SDK](https://ai-sdk.dev/) и [Models.dev](https
 
 Вы можете глобально настроить параметры модели через файл config.
 
-```jsonc title="opencode\.jsonc" {7-12,19-24}
+```jsonc title="opencode.jsonc" {7-12,19-24}
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "provider": {
     "openai": {
       "models": {
@@ -107,9 +107,9 @@ openbmw использует [AI SDK](https://ai-sdk.dev/) и [Models.dev](https
 
 Вы также можете определить собственные варианты, расширяющие встроенные. Варианты позволяют настраивать разные параметры для одной и той же модели без создания повторяющихся записей:
 
-```jsonc title="opencode\.jsonc" {6-21}
+```jsonc title="opencode.jsonc" {6-21}
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "provider": {
     "openbmw": {
       "models": {
@@ -172,9 +172,9 @@ openbmw поставляется с вариантами по умолчанию
 
 Вы можете переопределить существующие варианты или добавить свои собственные:
 
-```jsonc title="opencode\.jsonc" {7-18}
+```jsonc title="opencode.jsonc" {7-18}
 {
-  "$schema": "https://opencode\.ai/config.json",
+  "$schema": "https://opencode.ai/config.json",
   "provider": {
     "openai": {
       "models": {
@@ -209,9 +209,9 @@ openbmw поставляется с вариантами по умолчанию
 
 2. Список моделей в конфигурации openbmw.
 
-   ```json title="opencode\.json"
+   ```json title="opencode.json"
    {
-     "$schema": "https://opencode\.ai/config.json",
+     "$schema": "https://opencode.ai/config.json",
      "model": "anthropic/claude-sonnet-4-20250514"
    }
    ```

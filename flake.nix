@@ -37,7 +37,7 @@
             node_modules = final.callPackage ./nix/node_modules.nix {
               inherit rev;
             };
-            openbmw = final.callPackage ./nix/opencode\.nix {
+            openbmw = final.callPackage ./nix/opencode.nix {
               inherit node_modules;
             };
             desktop = final.callPackage ./nix/desktop.nix {
@@ -56,7 +56,7 @@
           node_modules = pkgs.callPackage ./nix/node_modules.nix {
             inherit rev;
           };
-          openbmw = pkgs.callPackage ./nix/opencode\.nix {
+          openbmw = pkgs.callPackage ./nix/opencode.nix {
             inherit node_modules;
           };
           desktop = pkgs.callPackage ./nix/desktop.nix {
