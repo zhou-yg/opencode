@@ -129,10 +129,10 @@ async function showRemovalSummary(targets: RemovalTargets, method: Installation.
 
   if (method !== "curl" && method !== "unknown") {
     const cmds: Record<string, string> = {
-      npm: "npm uninstall -g openbmw-ai",
-      pnpm: "pnpm uninstall -g openbmw-ai",
-      bun: "bun remove -g openbmw-ai",
-      yarn: "yarn global remove openbmw-ai",
+      npm: "npm uninstall -g opencode-ai",
+      pnpm: "pnpm uninstall -g opencode-ai",
+      bun: "bun remove -g opencode-ai",
+      yarn: "yarn global remove opencode-ai",
       brew: "brew uninstall openbmw",
       choco: "choco uninstall openbmw",
       scoop: "scoop uninstall openbmw",
@@ -180,10 +180,10 @@ async function executeUninstall(method: Installation.Method, targets: RemovalTar
 
   if (method !== "curl" && method !== "unknown") {
     const cmds: Record<string, string[]> = {
-      npm: ["npm", "uninstall", "-g", "openbmw-ai"],
-      pnpm: ["pnpm", "uninstall", "-g", "openbmw-ai"],
-      bun: ["bun", "remove", "-g", "openbmw-ai"],
-      yarn: ["yarn", "global", "remove", "openbmw-ai"],
+      npm: ["npm", "uninstall", "-g", "opencode-ai"],
+      pnpm: ["pnpm", "uninstall", "-g", "opencode-ai"],
+      bun: ["bun", "remove", "-g", "opencode-ai"],
+      yarn: ["yarn", "global", "remove", "opencode-ai"],
       brew: ["brew", "uninstall", "openbmw"],
       choco: ["choco", "uninstall", "openbmw"],
       scoop: ["scoop", "uninstall", "openbmw"],
@@ -266,7 +266,7 @@ async function getShellConfigFile(): Promise<string | null> {
     if (!exists) continue
 
     const content = await Filesystem.readText(file).catch(() => "")
-    if (content.includes("# opencode") || content.includes(".bmw/bin")) {
+    if (content.includes("# openbmw") || content.includes(".bmw/bin")) {
       return file
     }
   }
@@ -284,7 +284,7 @@ async function cleanShellConfig(file: string) {
   for (const line of lines) {
     const trimmed = line.trim()
 
-    if (trimmed === "# opencode") {
+    if (trimmed === "# openbmw") {
       skip = true
       continue
     }

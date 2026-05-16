@@ -6,14 +6,14 @@ description: Interager med opencode-serveren over HTTP.
 import config from "../../../../config.mjs"
 export const typesUrl = `${config.github}/blob/dev/packages/sdk/js/src/gen/types.gen.ts`
 
-Kommandoen `opencode serve` kører en hovedløs HTTP-server, som afslører et OpenAPI-endpoint, som en opencode-klient kan bruge.
+Kommandoen `openbmw serve` kører en hovedløs HTTP-server, som afslører et OpenAPI-endpoint, som en opencode-klient kan bruge.
 
 ---
 
 ### Brug
 
 ```bash
-opencode serve [--port <number>] [--hostname <string>] [--cors <origin>]
+openbmw serve [--port <number>] [--hostname <string>] [--cors <origin>]
 ```
 
 #### Indstillinger
@@ -23,41 +23,41 @@ opencode serve [--port <number>] [--hostname <string>] [--cors <origin>]
 | `--port`        | Port at lytte på                             | `4096`           |
 | `--hostname`    | Værtsnavn at lytte på                        | `127.0.0.1`      |
 | `--mdns`        | Aktiver mDNS-opdagelse                       | `false`          |
-| `--mdns-domain` | Brugerdefineret domænenavn for mDNS-tjeneste | `opencode.local` |
+| `--mdns-domain` | Brugerdefineret domænenavn for mDNS-tjeneste | `opencode\.local` |
 | `--cors`        | Yderligere browseroprindelse for at tillade  | `[]`             |
 
 `--cors` kan angives flere gange:
 
 ```bash
-opencode serve --cors http://localhost:5173 --cors https://app.example.com
+openbmw serve --cors http://localhost:5173 --cors https://app.example.com
 ```
 
 ---
 
 ### Godkendelse
 
-Indstil `OPENCODE_SERVER_PASSWORD` for at beskytte serveren med HTTP grundlæggende godkendelse. Brugernavnet er som standard `opencode`, eller indstil `OPENCODE_SERVER_USERNAME` for at tilsidesætte det. Dette gælder både `opencode serve` og `opencode web`.
+Indstil `OPENCODE_SERVER_PASSWORD` for at beskytte serveren med HTTP grundlæggende godkendelse. Brugernavnet er som standard `openbmw`, eller indstil `OPENCODE_SERVER_USERNAME` for at tilsidesætte det. Dette gælder både `openbmw serve` og `openbmw web`.
 
 ```bash
-OPENCODE_SERVER_PASSWORD=your-password opencode serve
+OPENCODE_SERVER_PASSWORD=your-password openbmw serve
 ```
 
 ---
 
 ### Sådan fungerer det
 
-Når du kører `opencode` starter den en TUI og en server. Hvor TUI er
+Når du kører `openbmw` starter den en TUI og en server. Hvor TUI er
 klient som taler med serveren. Serveren viser en OpenAPI 3.1-specifikation
 endpoint. Dette endpoint bruges også til at generere en [SDK](/docs/sdk).
 
 :::tip
-Brug opencode-serveren til at interagere med opencode programmatisk.
+Brug opencode-serveren til at interagere med openbmw programmatisk.
 :::
 
-Denne arkitektur lader opencode understøtte flere klienter og lader dig interagere med opencode programmatisk.
+Denne arkitektur lader openbmw understøtte flere klienter og lader dig interagere med openbmw programmatisk.
 
-Du kan køre `opencode serve` for at starte en selvstændig server. Hvis du har
-opencode TUI kørende, vil `opencode serve` starte en ny server.
+Du kan køre `openbmw serve` for at starte en selvstændig server. Hvis du har
+openbmw TUI kørende, vil `openbmw serve` starte en ny server.
 
 ---
 

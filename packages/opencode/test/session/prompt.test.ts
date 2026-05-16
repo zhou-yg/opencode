@@ -1825,7 +1825,7 @@ it.live("does not loop empty assistant turns for a simple reply", () =>
       const sessions = yield* Session.Service
       const session = yield* sessions.create({ title: "Prompt regression" })
 
-      yield* llm.text("packages/opencode/src/session/processor.ts")
+      yield* llm.text("packages/openbmw/src/session/processor.ts")
 
       const result = yield* prompt.prompt({
         sessionID: session.id,
@@ -1900,7 +1900,7 @@ it.live("applies agent variant only when using agent model", () =>
         const other = yield* prompt.prompt({
           sessionID: session.id,
           agent: "build",
-          model: { providerID: ProviderID.make("opencode"), modelID: ModelID.make("kimi-k2.5-free") },
+          model: { providerID: ProviderID.make("openbmw"), modelID: ModelID.make("kimi-k2.5-free") },
           noReply: true,
           parts: [{ type: "text", text: "hello" }],
         })

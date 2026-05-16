@@ -402,13 +402,13 @@ describe("HttpApi SDK", () => {
         const bad = yield* capture(() =>
           client(backend, directory, {
             password: "secret",
-            headers: { authorization: authorization("opencode", "wrong") },
+            headers: { authorization: authorization("openbmw", "wrong") },
           }).file.read({ path: "hello.txt" }),
         )
         const good = yield* capture(() =>
           client(backend, directory, {
             password: "secret",
-            headers: { authorization: authorization("opencode", "secret") },
+            headers: { authorization: authorization("openbmw", "secret") },
           }).file.read({ path: "hello.txt" }),
         )
 

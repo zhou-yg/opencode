@@ -70,10 +70,10 @@ const tagFlags = tags.flatMap((t) => ["-t", t])
 if (!Script.preview) {
   await $`docker buildx build --platform ${platforms} ${tagFlags} --push .`
   // Calculate SHA values
-  const arm64Sha = await $`sha256sum ./dist/openbmw-linux-arm64.tar.gz | cut -d' ' -f1`.text().then((x) => x.trim())
-  const x64Sha = await $`sha256sum ./dist/openbmw-linux-x64.tar.gz | cut -d' ' -f1`.text().then((x) => x.trim())
-  const macX64Sha = await $`sha256sum ./dist/openbmw-darwin-x64.zip | cut -d' ' -f1`.text().then((x) => x.trim())
-  const macArm64Sha = await $`sha256sum ./dist/openbmw-darwin-arm64.zip | cut -d' ' -f1`.text().then((x) => x.trim())
+  const arm64Sha = await $`sha256sum ./dist/opencode-linux-arm64.tar.gz | cut -d' ' -f1`.text().then((x) => x.trim())
+  const x64Sha = await $`sha256sum ./dist/opencode-linux-x64.tar.gz | cut -d' ' -f1`.text().then((x) => x.trim())
+  const macX64Sha = await $`sha256sum ./dist/opencode-darwin-x64.zip | cut -d' ' -f1`.text().then((x) => x.trim())
+  const macArm64Sha = await $`sha256sum ./dist/opencode-darwin-arm64.zip | cut -d' ' -f1`.text().then((x) => x.trim())
 
   const [pkgver, _subver = ""] = Script.version.split(/(-.*)/, 2)
 
@@ -82,7 +82,7 @@ if (!Script.preview) {
     "# Maintainer: dax",
     "# Maintainer: adam",
     "",
-    "pkgname='openbmw-bin'",
+    "pkgname='opencode-bin'",
     `pkgver=${pkgver}`,
     `_subver=${_subver}`,
     "options=('!debug' '!strip')",
@@ -95,10 +95,10 @@ if (!Script.preview) {
     "conflicts=('openbmw')",
     "depends=('ripgrep')",
     "",
-    `source_aarch64=("\${pkgname}_\${pkgver}_aarch64.tar.gz::https://github.com/anomalyco/openbmw/releases/download/v\${pkgver}\${_subver}/openbmw-linux-arm64.tar.gz")`,
+    `source_aarch64=("\${pkgname}_\${pkgver}_aarch64.tar.gz::https://github.com/anomalyco/openbmw/releases/download/v\${pkgver}\${_subver}/opencode-linux-arm64.tar.gz")`,
     `sha256sums_aarch64=('${arm64Sha}')`,
 
-    `source_x86_64=("\${pkgname}_\${pkgver}_x86_64.tar.gz::https://github.com/anomalyco/openbmw/releases/download/v\${pkgver}\${_subver}/openbmw-linux-x64.tar.gz")`,
+    `source_x86_64=("\${pkgname}_\${pkgver}_x86_64.tar.gz::https://github.com/anomalyco/openbmw/releases/download/v\${pkgver}\${_subver}/opencode-linux-x64.tar.gz")`,
     `sha256sums_x86_64=('${x64Sha}')`,
     "",
     "package() {",
@@ -107,7 +107,7 @@ if (!Script.preview) {
     "",
   ].join("\n")
 
-  for (const [pkg, pkgbuild] of [["openbmw-bin", binaryPkgbuild]]) {
+  for (const [pkg, pkgbuild] of [["opencode-bin", binaryPkgbuild]]) {
     for (let i = 0; i < 30; i++) {
       try {
         await $`rm -rf ./dist/aur-${pkg}`
@@ -141,7 +141,7 @@ if (!Script.preview) {
     "",
     "  on_macos do",
     "    if Hardware::CPU.intel?",
-    `      url "https://github.com/anomalyco/openbmw/releases/download/v${Script.version}/openbmw-darwin-x64.zip"`,
+    `      url "https://github.com/anomalyco/openbmw/releases/download/v${Script.version}/opencode-darwin-x64.zip"`,
     `      sha256 "${macX64Sha}"`,
     "",
     "      def install",
@@ -149,7 +149,7 @@ if (!Script.preview) {
     "      end",
     "    end",
     "    if Hardware::CPU.arm?",
-    `      url "https://github.com/anomalyco/openbmw/releases/download/v${Script.version}/openbmw-darwin-arm64.zip"`,
+    `      url "https://github.com/anomalyco/openbmw/releases/download/v${Script.version}/opencode-darwin-arm64.zip"`,
     `      sha256 "${macArm64Sha}"`,
     "",
     "      def install",
@@ -160,14 +160,14 @@ if (!Script.preview) {
     "",
     "  on_linux do",
     "    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?",
-    `      url "https://github.com/anomalyco/openbmw/releases/download/v${Script.version}/openbmw-linux-x64.tar.gz"`,
+    `      url "https://github.com/anomalyco/openbmw/releases/download/v${Script.version}/opencode-linux-x64.tar.gz"`,
     `      sha256 "${x64Sha}"`,
     "      def install",
     '        bin.install "openbmw"',
     "      end",
     "    end",
     "    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?",
-    `      url "https://github.com/anomalyco/openbmw/releases/download/v${Script.version}/openbmw-linux-arm64.tar.gz"`,
+    `      url "https://github.com/anomalyco/openbmw/releases/download/v${Script.version}/opencode-linux-arm64.tar.gz"`,
     `      sha256 "${arm64Sha}"`,
     "      def install",
     '        bin.install "openbmw"',
@@ -187,8 +187,8 @@ if (!Script.preview) {
   const tap = `https://x-access-token:${token}@github.com/anomalyco/homebrew-tap.git`
   await $`rm -rf ./dist/homebrew-tap`
   await $`git clone ${tap} ./dist/homebrew-tap`
-  await Bun.file("./dist/homebrew-tap/openbmw.rb").write(homebrewFormula)
-  await $`cd ./dist/homebrew-tap && git add openbmw.rb`
+  await Bun.file("./dist/homebrew-tap/opencode\.rb").write(homebrewFormula)
+  await $`cd ./dist/homebrew-tap && git add opencode\.rb`
   if ((await $`cd ./dist/homebrew-tap && git diff --cached --quiet`.nothrow()).exitCode !== 0) {
     await $`cd ./dist/homebrew-tap && git commit -m "Update to v${Script.version}"`
     await $`cd ./dist/homebrew-tap && git push`

@@ -174,9 +174,9 @@ export async function openapiHono() {
   const result = await generateSpecs(app, {
     documentation: {
       info: {
-        title: "opencode",
+        title: "openbmw",
         version: "1.0.0",
-        description: "opencode api",
+        description: "openbmw api",
       },
       openapi: "3.1.1",
     },
@@ -248,7 +248,7 @@ async function listenLegacy(opts: ListenOptions): Promise<Listener> {
 async function listenHttpApi(opts: ListenOptions, selection: ServerBackend.Selection): Promise<Listener> {
   log.info("server backend selected", {
     ...ServerBackend.attributes(selection),
-    "opencode.server.runtime": HttpApiServer.name,
+    "opencode\.server.runtime": HttpApiServer.name,
   })
 
   const buildLayer = (port: number) =>

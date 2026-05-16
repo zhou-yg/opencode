@@ -13,7 +13,7 @@ description: استخدم OpenCode في مشكلات GitLab وطلبات الد�
 
 يعمل OpenCode ضمن خط أنابيب GitLab عادي. يمكنك دمجه في الخط كمكوّن [CI](https://docs.gitlab.com/ee/ci/components/).
 
-هنا نستخدم مكوّن CI/CD أنشأه المجتمع لـ OpenCode — [nagyv/gitlab-opencode](https://gitlab.com/nagyv/gitlab-opencode).
+هنا نستخدم مكوّن CI/CD أنشأه المجتمع لـ OpenCode — [nagyv/gitlab-openbmw](https://gitlab.com/nagyv/gitlab-openbmw).
 
 ---
 
@@ -32,7 +32,7 @@ description: استخدم OpenCode في مشكلات GitLab وطلبات الد�
 
    ```yaml title=".gitlab-ci.yml"
    include:
-     - component: $CI_SERVER_FQDN/nagyv/gitlab-opencode/opencode@2
+     - component: $CI_SERVER_FQDN/nagyv/gitlab-openbmw/openbmw@2
        inputs:
          config_dir: ${CI_PROJECT_DIR}/opencode-config
          auth_json: $OPENCODE_AUTH_JSON # The variable name for your OpenCode authentication JSON
@@ -40,7 +40,7 @@ description: استخدم OpenCode في مشكلات GitLab وطلبات الد�
          message: "Your prompt here"
    ```
 
-لمزيد من المُدخلات وحالات الاستخدام، [اطّلع على الوثائق](https://gitlab.com/explore/catalog/nagyv/gitlab-opencode) الخاصة بهذا المكوّن.
+لمزيد من المُدخلات وحالات الاستخدام، [اطّلع على الوثائق](https://gitlab.com/explore/catalog/nagyv/gitlab-openbmw) الخاصة بهذا المكوّن.
 
 ---
 
@@ -82,7 +82,7 @@ description: استخدم OpenCode في مشكلات GitLab وطلبات الد�
     ```yaml
     image: node:22-slim
     commands:
-      - echo "Installing opencode"
+      - echo "Installing openbmw"
       - npm install --global opencode-ai
       - echo "Installing glab"
       - export GITLAB_TOKEN=$GITLAB_TOKEN_OPENCODE
@@ -92,9 +92,9 @@ description: استخدم OpenCode في مشكلات GitLab وطلبات الد�
       - echo "Configuring glab"
       - echo $GITLAB_HOST
       - echo "Creating OpenCode auth configuration"
-      - mkdir --parents ~/.local/share/opencode
+      - mkdir --parents ~/.local/share/openbmw
       - |
-        cat > ~/.local/share/opencode/auth.json << EOF
+        cat > ~/.local/share/openbmw/auth.json << EOF
         {
           "anthropic": {
             "type": "api",
@@ -103,13 +103,13 @@ description: استخدم OpenCode في مشكلات GitLab وطلبات الد�
         }
         EOF
       - echo "Configuring git"
-      - git config --global user.email "opencode@gitlab.com"
+      - git config --global user.email "openbmw@gitlab.com"
       - git config --global user.name "OpenCode"
       - echo "Testing glab"
       - glab issue list
       - echo "Running OpenCode"
       - |
-        opencode run "
+        openbmw run "
         You are an AI assistant helping with GitLab operations.
 
         Context: $AI_FLOW_CONTEXT

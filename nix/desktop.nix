@@ -21,11 +21,11 @@
   openssl,
   webkitgtk_4_1,
   gst_all_1,
-  opencode,
+  openbmw,
 }:
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "opencode-desktop";
-  inherit (opencode)
+  inherit (openbmw)
     version
     src
     node_modules
@@ -72,7 +72,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
     patchShebangs packages/desktop/node_modules
 
     mkdir -p packages/desktop/src-tauri/sidecars
-    cp ${opencode}/bin/opencode packages/desktop/src-tauri/sidecars/opencode-cli-${stdenv.hostPlatform.rust.rustcTarget}
+    cp ${openbmw}/bin/openbmw packages/desktop/src-tauri/sidecars/opencode-cli-${stdenv.hostPlatform.rust.rustcTarget}
   '';
 
   # see publish-tauri job in .github/workflows/publish.yml
@@ -92,9 +92,9 @@ rustPlatform.buildRustPackage (finalAttrs: {
 
   meta = {
     description = "OpenCode Desktop App";
-    homepage = "https://opencode.ai";
+    homepage = "https://opencode\.ai";
     license = lib.licenses.mit;
     mainProgram = "opencode-desktop";
-    inherit (opencode.meta) platforms;
+    inherit (opencode\.meta) platforms;
   };
 })

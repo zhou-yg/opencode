@@ -44,7 +44,7 @@ describe("project.initGit endpoint", () => {
       })
       // Reload behavior: bus emits exactly one server.instance.disposed for the directory.
       expect(disposedEvents(seen, tmp.path)).toBe(1)
-      expect(await Filesystem.exists(path.join(tmp.path, ".git", "opencode"))).toBe(false)
+      expect(await Filesystem.exists(path.join(tmp.path, ".git", "openbmw"))).toBe(false)
 
       const current = await app.request("/project/current", {
         headers: {

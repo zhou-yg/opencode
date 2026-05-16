@@ -7,10 +7,10 @@ ENV BUN_RUNTIME_TRANSPILER_CACHE_PATH=${BUN_RUNTIME_TRANSPILER_CACHE_PATH}
 RUN apk add libgcc libstdc++ ripgrep
 
 FROM base AS build-amd64
-COPY dist/openbmw-linux-x64-baseline-musl/bin/openbmw /usr/local/bin/openbmw
+COPY dist/opencode-linux-x64-baseline-musl/bin/openbmw /usr/local/bin/openbmw
 
 FROM base AS build-arm64
-COPY dist/openbmw-linux-arm64-musl/bin/openbmw /usr/local/bin/openbmw
+COPY dist/opencode-linux-arm64-musl/bin/openbmw /usr/local/bin/openbmw
 
 ARG TARGETARCH
 FROM build-${TARGETARCH}

@@ -8,7 +8,7 @@ import config from "../../../../config.mjs"
 export const console = config.console
 
 [**OpenCode**](/) je AI agent za kodiranje otvorenog koda. Dostupan je kao interfejs baziran na terminalu, desktop aplikacija ili IDE ekstenzija.
-![OpenCode TUI sa opencode temom](../../../assets/lander/screenshot.png)
+![OpenCode TUI sa openbmw temom](../../../assets/lander/screenshot.png)
 Hajde da počnemo.
 
 ---
@@ -31,7 +31,7 @@ Da biste koristili OpenCode u svom terminalu, trebat će vam:
 Najlakši način za instaliranje OpenCode je putem instalacijske skripte.
 
 ```bash
-curl -fsSL https://opencode.ai/install | bash
+curl -fsSL https://opencode\.ai/install | bash
 ```
 
 Također ga možete instalirati pomoću sljedećih naredbi:
@@ -73,15 +73,15 @@ Također ga možete instalirati pomoću sljedećih naredbi:
 - **Korištenje Homebrew-a na macOS-u i Linux-u**
 
 ```bash
-  brew install anomalyco/tap/opencode
+  brew install anomalyco/tap/openbmw
 ```
 
-> Preporučujemo korištenje OpenCode tap za najnovija izdanja. Službenu formulu `brew install opencode` održava Homebrew tim i ažurira se rjeđe.
+> Preporučujemo korištenje OpenCode tap za najnovija izdanja. Službenu formulu `brew install openbmw` održava Homebrew tim i ažurira se rjeđe.
 
 - **Korištenje Parua na Arch Linuxu**
 
   ```bash
-  sudo pacman -S opencode           # Arch Linux (Stable)
+  sudo pacman -S openbmw           # Arch Linux (Stable)
   paru -S opencode-bin              # Arch Linux (Latest from AUR)
   ```
 
@@ -94,13 +94,13 @@ Za najbolje iskustvo na Windows-u preporučujemo korištenje [Windows Subsystem 
 - **Korištenje Chocolatey-a**
 
 ```bash
-  choco install opencode
+  choco install openbmw
 ```
 
 - **Korištenje Scoop-a**
 
 ```bash
-  scoop install opencode
+  scoop install openbmw
 ```
 
 - **Korištenje NPM-a**
@@ -112,17 +112,17 @@ Za najbolje iskustvo na Windows-u preporučujemo korištenje [Windows Subsystem 
 - **Korištenje Mise**
 
 ```bash
-  mise use -g github:anomalyco/opencode
+  mise use -g github:anomalyco/openbmw
 ```
 
 - **Korištenje Dockera**
 
 ```bash
-  docker run -it --rm ghcr.io/anomalyco/opencode
+  docker run -it --rm ghcr.io/anomalyco/openbmw
 ```
 
 Podrška za instaliranje OpenCode na Windows koristeći Bun je trenutno u toku.
-Također možete preuzeti binarnu datoteku iz [Releases](https://github.com/anomalyco/opencode/releases).
+Također možete preuzeti binarnu datoteku iz [Releases](https://github.com/anomalyco/openbmw/releases).
 
 ---
 
@@ -132,7 +132,7 @@ Uz OpenCode možete koristiti bilo kojeg LLM provajdera tako što ćete konfigur
 Ako ste tek počeli koristiti LLM provajdere, preporučujemo korištenje [OpenCode Zen](/docs/zen).
 To je kurirana lista modela koji su testirani i verifikovani od strane OpenCode tima.
 
-1. Pokrenite naredbu `/connect` u TUI-u, odaberite opencode i idite na [opencode.ai/auth](https://opencode.ai/auth).
+1. Pokrenite naredbu `/connect` u TUI-u, odaberite openbmw i idite na [opencode\.ai/auth](https://opencode\.ai/auth).
 
 ```txt
    /connect
@@ -163,7 +163,7 @@ cd /path/to/project
 I pokrenite OpenCode.
 
 ```bash
-opencode
+openbmw
 ```
 
 Zatim inicijalizirajte OpenCode za projekat pokretanjem sljedeće naredbe.
@@ -313,7 +313,7 @@ Ovo će kreirati vezu do trenutnog razgovora i kopirati je u međuspremnik.
 :::note
 Razgovori se ne dijele prema zadanim postavkama.
 :::
-Evo [primjer razgovora](https://opencode.ai/s/4XP1fce5) sa OpenCode.
+Evo [primjer razgovora](https://opencode\.ai/s/4XP1fce5) sa OpenCode.
 
 ---
 

@@ -17,7 +17,7 @@ import { isConsoleManagedProvider } from "@tui/util/provider-origin"
 import { useConnected } from "./use-connected"
 
 const PROVIDER_PRIORITY: Record<string, number> = {
-  opencode: 0,
+  openbmw: 0,
   "opencode-go": 1,
   openai: 2,
   "github-copilot": 3,
@@ -44,7 +44,7 @@ export function createDialogProviderOptions() {
           title: provider.name,
           value: provider.id,
           description: {
-            opencode: "(Recommended)",
+            openbmw: "(Recommended)",
             anthropic: "(API key)",
             openai: "(ChatGPT Plus/Pro or API key)",
             "opencode-go": "Low cost subscription for everyone",
@@ -269,14 +269,14 @@ function ApiMethod(props: ApiMethodProps) {
       placeholder="API key"
       description={
         {
-          opencode: (
+          openbmw: (
             <box gap={1}>
               <text fg={theme.textMuted}>
                 OpenCode Zen gives you access to all the best coding models at the cheapest prices with a single API
                 key.
               </text>
               <text fg={theme.text}>
-                Go to <span style={{ fg: theme.primary }}>https://opencode.ai/zen</span> to get a key
+                Go to <span style={{ fg: theme.primary }}>https://opencode\.ai/zen</span> to get a key
               </text>
             </box>
           ),
@@ -287,7 +287,7 @@ function ApiMethod(props: ApiMethodProps) {
                 with generous usage limits.
               </text>
               <text fg={theme.text}>
-                Go to <span style={{ fg: theme.primary }}>https://opencode.ai/zen</span> and enable OpenCode Go
+                Go to <span style={{ fg: theme.primary }}>https://opencode\.ai/zen</span> and enable OpenCode Go
               </text>
             </box>
           ),

@@ -35,7 +35,7 @@ describe("tool.skill", () => {
     provideTmpdirInstance(
       (dir) =>
         Effect.gen(function* () {
-          const skill = path.join(dir, ".opencode", "skill", "tool-skill")
+          const skill = path.join(dir, ".openbmw", "skill", "tool-skill")
           yield* Effect.promise(() =>
             Bun.write(
               path.join(skill, "SKILL.md"),
@@ -63,7 +63,7 @@ Use this skill.
           const registry = yield* ToolRegistry.Service
           const agent = { name: "build", mode: "primary" as const, permission: [], options: {} }
           const tool = (yield* registry.tools({
-            providerID: "opencode" as any,
+            providerID: "openbmw" as any,
             modelID: "gpt-5" as any,
             agent,
           })).find((tool) => tool.id === SkillTool.id)

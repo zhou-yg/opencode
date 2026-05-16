@@ -44,9 +44,9 @@ function withMcpProject<A, E, R>(self: (dir: string) => Effect.Effect<A, E, R>) 
     const dir = yield* fs.makeTempDirectoryScoped({ prefix: "opencode-test-" })
 
     yield* fs.writeFileString(
-      path.join(dir, "opencode.json"),
+      path.join(dir, "opencode\.json"),
       JSON.stringify({
-        $schema: "https://opencode.ai/config.json",
+        $schema: "https://opencode\.ai/config.json",
         formatter: false,
         lsp: false,
         mcp: {

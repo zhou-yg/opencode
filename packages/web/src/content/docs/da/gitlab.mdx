@@ -13,7 +13,7 @@ I begge tilfælde vil OpenCode køre på dine GitLab-løbere.
 
 OpenCode fungerer i en almindelig GitLab-pipeline. Du kan bygge det ind i en pipeline som en [CI component](https://docs.gitlab.com/ee/ci/components/)
 
-Her bruger vi en community-skabt CI/CD-komponent til OpenCode — [nagyv/gitlab-opencode](https://gitlab.com/nagyv/gitlab-opencode).
+Her bruger vi en community-skabt CI/CD-komponent til OpenCode — [nagyv/gitlab-openbmw](https://gitlab.com/nagyv/gitlab-openbmw).
 
 ---
 
@@ -32,7 +32,7 @@ Her bruger vi en community-skabt CI/CD-komponent til OpenCode — [nagyv/gitlab-
 
    ```yaml title=".gitlab-ci.yml"
    include:
-     - component: $CI_SERVER_FQDN/nagyv/gitlab-opencode/opencode@2
+     - component: $CI_SERVER_FQDN/nagyv/gitlab-openbmw/openbmw@2
        inputs:
          config_dir: ${CI_PROJECT_DIR}/opencode-config
          auth_json: $OPENCODE_AUTH_JSON # The variable name for your OpenCode authentication JSON
@@ -40,7 +40,7 @@ Her bruger vi en community-skabt CI/CD-komponent til OpenCode — [nagyv/gitlab-
          message: "Your prompt here"
    ```
 
-For flere input og use cases [check out the docs](https://gitlab.com/explore/catalog/nagyv/gitlab-opencode) for denne komponent.
+For flere input og use cases [check out the docs](https://gitlab.com/explore/catalog/nagyv/gitlab-openbmw) for denne komponent.
 
 ---
 
@@ -82,7 +82,7 @@ Tjek [**GitLab docs**](https://docs.gitlab.com/user/duo_agent_platform/agent_ass
     ```yaml
     image: node:22-slim
     commands:
-      - echo "Installing opencode"
+      - echo "Installing openbmw"
       - npm install --global opencode-ai
       - echo "Installing glab"
       - export GITLAB_TOKEN=$GITLAB_TOKEN_OPENCODE
@@ -92,9 +92,9 @@ Tjek [**GitLab docs**](https://docs.gitlab.com/user/duo_agent_platform/agent_ass
       - echo "Configuring glab"
       - echo $GITLAB_HOST
       - echo "Creating OpenCode auth configuration"
-      - mkdir --parents ~/.local/share/opencode
+      - mkdir --parents ~/.local/share/openbmw
       - |
-        cat > ~/.local/share/opencode/auth.json << EOF
+        cat > ~/.local/share/openbmw/auth.json << EOF
         {
           "anthropic": {
             "type": "api",
@@ -103,13 +103,13 @@ Tjek [**GitLab docs**](https://docs.gitlab.com/user/duo_agent_platform/agent_ass
         }
         EOF
       - echo "Configuring git"
-      - git config --global user.email "opencode@gitlab.com"
+      - git config --global user.email "openbmw@gitlab.com"
       - git config --global user.name "OpenCode"
       - echo "Testing glab"
       - glab issue list
       - echo "Running OpenCode"
       - |
-        opencode run "
+        openbmw run "
         You are an AI assistant helping with GitLab operations.
 
         Context: $AI_FLOW_CONTEXT

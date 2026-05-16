@@ -36,8 +36,8 @@ describe("Npm.sanitize", () => {
   })
 
   test("handles git https specs", () => {
-    const spec = "acme@git+https://github.com/opencode/acme.git"
-    const expected = win ? "acme@git+https_//github.com/opencode/acme.git" : spec
+    const spec = "acme@git+https://github.com/openbmw/acme.git"
+    const expected = win ? "acme@git+https_//github.com/openbmw/acme.git" : spec
     expect(Npm.sanitize(spec)).toBe(expected)
   })
 })

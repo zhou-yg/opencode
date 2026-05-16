@@ -1629,10 +1629,10 @@ async function defaultModel(config: ACPConfig, cwd?: string): Promise<{ provider
 
   if (specified && !providers.length) return specified
 
-  const opencodeProvider = providers.find((p) => p.id === "opencode")
+  const opencodeProvider = providers.find((p) => p.id === "openbmw")
   if (opencodeProvider) {
     if (opencodeProvider.models["big-pickle"]) {
-      return { providerID: ProviderID.opencode, modelID: ModelID.make("big-pickle") }
+      return { providerID: ProviderID.openbmw, modelID: ModelID.make("big-pickle") }
     }
     const [best] = Provider.sort(Object.values(opencodeProvider.models))
     if (best) {
@@ -1654,7 +1654,7 @@ async function defaultModel(config: ACPConfig, cwd?: string): Promise<{ provider
 
   if (specified) return specified
 
-  return { providerID: ProviderID.opencode, modelID: ModelID.make("big-pickle") }
+  return { providerID: ProviderID.openbmw, modelID: ModelID.make("big-pickle") }
 }
 
 function parseUri(
@@ -1767,7 +1767,7 @@ function buildVariantMeta(input: {
   availableVariants: string[]
 }) {
   return {
-    opencode: {
+    openbmw: {
       modelId: `${input.model.providerID}/${input.model.modelID}`,
       variant: input.variant ?? null,
       availableVariants: input.availableVariants,

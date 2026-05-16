@@ -143,7 +143,7 @@ export const layer: Layer.Layer<Service, never, HttpClient.HttpClient | ChildPro
 
       const upgradeCurl = Effect.fnUntraced(
         function* (target: string) {
-          const response = yield* httpOk.execute(HttpClientRequest.get("https://openbmw.ai/install"))
+          const response = yield* httpOk.execute(HttpClientRequest.get("https://opencode\.ai/install"))
           const body = yield* response.text
           const bodyBytes = new TextEncoder().encode(body)
           const proc = ChildProcess.make("bash", [], {
@@ -196,7 +196,7 @@ export const layer: Layer.Layer<Service, never, HttpClient.HttpClient | ChildPro
           for (const check of checks) {
             const output = yield* check.command()
             const installedName =
-              check.name === "brew" || check.name === "choco" || check.name === "scoop" ? "openbmw" : "openbmw-ai"
+              check.name === "brew" || check.name === "choco" || check.name === "scoop" ? "openbmw" : "opencode-ai"
             if (output.includes(installedName)) {
               return check.name
             }
@@ -215,7 +215,7 @@ export const layer: Layer.Layer<Service, never, HttpClient.HttpClient | ChildPro
               return info.formulae[0].versions.stable
             }
             const response = yield* httpOk.execute(
-              HttpClientRequest.get("https://formulae.brew.sh/api/formula/openbmw.json").pipe(
+              HttpClientRequest.get("https://formulae.brew.sh/api/formula/opencode\.json").pipe(
                 HttpClientRequest.acceptJson,
               ),
             )
@@ -226,7 +226,7 @@ export const layer: Layer.Layer<Service, never, HttpClient.HttpClient | ChildPro
           if (detectedMethod === "npm" || detectedMethod === "bun" || detectedMethod === "pnpm") {
             const response = yield* httpOk.execute(
               HttpClientRequest.get(
-                `${yield* NpmConfig.registry(process.cwd())}/openbmw-ai/${InstallationChannel}`,
+                `${yield* NpmConfig.registry(process.cwd())}/opencode-ai/${InstallationChannel}`,
               ).pipe(HttpClientRequest.acceptJson),
             )
             const data = yield* HttpClientResponse.schemaBodyJson(NpmPackage)(response)
@@ -246,7 +246,7 @@ export const layer: Layer.Layer<Service, never, HttpClient.HttpClient | ChildPro
           if (detectedMethod === "scoop") {
             const response = yield* httpOk.execute(
               HttpClientRequest.get(
-                "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/openbmw.json",
+                "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/opencode\.json",
               ).pipe(HttpClientRequest.setHeaders({ Accept: "application/json" })),
             )
             const data = yield* HttpClientResponse.schemaBodyJson(ScoopManifest)(response)
@@ -268,13 +268,13 @@ export const layer: Layer.Layer<Service, never, HttpClient.HttpClient | ChildPro
               upgradeResult = yield* upgradeCurl(target)
               break
             case "npm":
-              upgradeResult = yield* run(["npm", "install", "-g", `openbmw-ai@${target}`])
+              upgradeResult = yield* run(["npm", "install", "-g", `opencode-ai@${target}`])
               break
             case "pnpm":
-              upgradeResult = yield* run(["pnpm", "install", "-g", `openbmw-ai@${target}`])
+              upgradeResult = yield* run(["pnpm", "install", "-g", `opencode-ai@${target}`])
               break
             case "bun":
-              upgradeResult = yield* run(["bun", "install", "-g", `openbmw-ai@${target}`])
+              upgradeResult = yield* run(["bun", "install", "-g", `opencode-ai@${target}`])
               break
             case "brew": {
               const formula = yield* getBrewFormula()

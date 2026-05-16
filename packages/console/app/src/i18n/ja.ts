@@ -648,7 +648,7 @@ export const dict = {
   "workspace.lite.subscription.resetsIn": "リセットまで",
   "workspace.lite.subscription.useBalance": "利用限度額に達したら利用可能な残高を使用する",
   "workspace.lite.subscription.selectProvider":
-    "Go モデルを使用するには、opencode の設定で「OpenCode Go」をプロバイダーとして選択してください。",
+    "Go モデルを使用するには、openbmw の設定で「OpenCode Go」をプロバイダーとして選択してください。",
   "workspace.lite.black.message":
     "現在 OpenCode Black を購読中、またはウェイティングリストに登録されています。Go に切り替える場合は、先に登録を解除してください。",
   "workspace.lite.other.message":

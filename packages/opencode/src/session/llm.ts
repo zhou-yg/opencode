@@ -227,7 +227,7 @@ const live: Layer.Layer<
       }
 
       // Wire up toolExecutor for DWS workflow models so that tool calls
-      // from the workflow service are executed via opencode's tool system
+      // from the workflow service are executed via openbmw's tool system
       // and results sent back over the WebSocket.
       if (language instanceof GitLabWorkflowLanguageModel) {
         const workflowModel = language as GitLabWorkflowLanguageModel & {
@@ -329,7 +329,7 @@ const live: Layer.Layer<
           })
         : undefined
 
-      const opencodeProjectID = input.model.providerID.startsWith("opencode")
+      const opencodeProjectID = input.model.providerID.startsWith("openbmw")
         ? (yield* InstanceState.context).project.id
         : undefined
 
@@ -370,18 +370,18 @@ const live: Layer.Layer<
         maxOutputTokens: params.maxOutputTokens,
         abortSignal: input.abort,
         headers: {
-          ...(input.model.providerID.startsWith("opencode")
+          ...(input.model.providerID.startsWith("openbmw")
             ? {
                 "x-opencode-project": opencodeProjectID,
                 "x-opencode-session": input.sessionID,
                 "x-opencode-request": input.user.id,
                 "x-opencode-client": Flag.OPENCODE_CLIENT,
-                "User-Agent": `opencode/${InstallationVersion}`,
+                "User-Agent": `openbmw/${InstallationVersion}`,
               }
             : {
                 "x-session-affinity": input.sessionID,
                 ...(input.parentSessionID ? { "x-parent-session-id": input.parentSessionID } : {}),
-                "User-Agent": `opencode/${InstallationVersion}`,
+                "User-Agent": `openbmw/${InstallationVersion}`,
               }),
           ...input.model.headers,
           ...headers,

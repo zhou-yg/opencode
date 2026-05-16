@@ -187,7 +187,7 @@ export const layer: Layer.Layer<
     const scope = yield* Scope.Scope
 
     const readCachedProjectId = Effect.fnUntraced(function* (dir: string) {
-      return yield* fs.readFileString(pathSvc.join(dir, "opencode")).pipe(
+      return yield* fs.readFileString(pathSvc.join(dir, "openbmw")).pipe(
         Effect.map((x) => x.trim()),
         Effect.map((x) => ProjectID.make(x)),
         Effect.catch(() => Effect.void),
@@ -254,7 +254,7 @@ export const layer: Layer.Layer<
 
           id = roots[0] ? ProjectID.make(roots[0]) : undefined
           if (id) {
-            yield* fs.writeFileString(pathSvc.join(common, "opencode"), id).pipe(Effect.ignore)
+            yield* fs.writeFileString(pathSvc.join(common, "openbmw"), id).pipe(Effect.ignore)
           }
         }
 

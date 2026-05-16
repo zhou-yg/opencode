@@ -98,10 +98,10 @@ export function createOpencodeClient(config?: Config & { directory?: string; exp
     if (!isEmpty) return error
     const method = request?.method ?? "?"
     const url = request?.url ?? "?"
-    if (!response) return new Error(`opencode server ${method} ${url}: network error (no response)`)
+    if (!response) return new Error(`openbmw server ${method} ${url}: network error (no response)`)
     const status = response.status
     const statusText = response.statusText ? " " + response.statusText : ""
-    return new Error(`opencode server ${method} ${url} → ${status}${statusText}: (empty response body)`)
+    return new Error(`openbmw server ${method} ${url} → ${status}${statusText}: (empty response body)`)
   })
   return new OpencodeClient({ client })
 }

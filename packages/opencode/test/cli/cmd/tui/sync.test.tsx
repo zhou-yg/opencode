@@ -11,8 +11,8 @@ import { SDKProvider, type EventSource } from "../../../../src/cli/cmd/tui/conte
 import { SyncProvider, useSync } from "../../../../src/cli/cmd/tui/context/sync"
 import { tmpdir } from "../../../fixture/fixture"
 
-const worktree = "/tmp/opencode"
-const directory = `${worktree}/packages/opencode`
+const worktree = "/tmp/openbmw"
+const directory = `${worktree}/packages/openbmw`
 
 async function wait(fn: () => boolean, timeout = 2000) {
   const start = Date.now()
@@ -134,7 +134,7 @@ describe("tui sync", () => {
     try {
       expect(kv.get("session_directory_filter_enabled", true)).toBe(true)
       expect(session.at(-1)?.searchParams.get("scope")).toBeNull()
-      expect(session.at(-1)?.searchParams.get("path")).toBe("packages/opencode")
+      expect(session.at(-1)?.searchParams.get("path")).toBe("packages/openbmw")
 
       kv.set("session_directory_filter_enabled", false)
       await sync.session.refresh()

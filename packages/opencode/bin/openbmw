@@ -51,7 +51,7 @@ if (!arch) {
   arch = os.arch()
 }
 const base = "openbmw-" + platform + "-" + arch
-const binary = platform === "windows" ? "openbmw.exe" : "openbmw"
+const binary = platform === "windows" ? "opencode\.exe" : "openbmw"
 
 function supportsAvx2() {
   if (arch !== "x64") return false

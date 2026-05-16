@@ -26,12 +26,12 @@ const APP_NAMES: Record<string, string> = {
   prod: "OpenCode",
 }
 const APP_IDS: Record<string, string> = {
-  dev: "ai.opencode.desktop.dev",
-  beta: "ai.opencode.desktop.beta",
-  prod: "ai.opencode.desktop",
+  dev: "ai.opencode\.desktop.dev",
+  beta: "ai.opencode\.desktop.beta",
+  prod: "ai.opencode\.desktop",
 }
 const TEST_ONBOARDING = process.env.OPENCODE_TEST_ONBOARDING === "1"
-const appId = app.isPackaged ? APP_IDS[CHANNEL] : "ai.opencode.desktop.dev"
+const appId = app.isPackaged ? APP_IDS[CHANNEL] : "ai.opencode\.desktop.dev"
 const onboardingTestRoot = setupOnboardingTestEnv()
 app.setName(app.isPackaged ? APP_NAMES[CHANNEL] : "OpenCode Dev")
 app.setAppUserModelId(appId)
@@ -108,7 +108,7 @@ function setupApp() {
   }
 
   app.on("second-instance", (_event: Event, argv: string[]) => {
-    const urls = argv.filter((arg: string) => arg.startsWith("opencode://"))
+    const urls = argv.filter((arg: string) => arg.startsWith("openbmw://"))
     if (urls.length) {
       logger.log("deep link received via second-instance", { urls })
       emitDeepLinks(urls)
@@ -139,7 +139,7 @@ function setupApp() {
 
   void app.whenReady().then(async () => {
     if (!TEST_ONBOARDING) migrate()
-    app.setAsDefaultProtocolClient("opencode")
+    app.setAsDefaultProtocolClient("openbmw")
     registerRendererProtocol()
     setDockIcon()
     setupAutoUpdater()
@@ -227,7 +227,7 @@ async function initialize() {
     server = listener
     serverReady.resolve({
       url,
-      username: "opencode",
+      username: "openbmw",
       password,
     })
 
@@ -368,7 +368,7 @@ function sqliteFileExists() {
 
   const xdg = process.env.XDG_DATA_HOME
   const base = xdg && xdg.length > 0 ? xdg : join(homedir(), ".local", "share")
-  return existsSync(join(base, "opencode", "opencode.db"))
+  return existsSync(join(base, "openbmw", "opencode\.db"))
 }
 
 function setupAutoUpdater() {

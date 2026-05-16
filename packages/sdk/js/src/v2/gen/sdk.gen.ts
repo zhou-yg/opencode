@@ -498,9 +498,9 @@ export class Global extends HeyApiClient {
   }
 
   /**
-   * Upgrade opencode
+   * Upgrade openbmw
    *
-   * Upgrade opencode to the specified version or latest if not specified.
+   * Upgrade openbmw to the specified version or latest if not specified.
    */
   public upgrade<ThrowOnError extends boolean = false>(
     parameters?: {

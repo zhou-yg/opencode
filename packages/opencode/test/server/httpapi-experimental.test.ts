@@ -64,7 +64,7 @@ describe("experimental HttpApi", () => {
     const [consoleState, consoleOrgs, toolList, toolIDs, worktrees, resources] = await Promise.all([
       app().request(ExperimentalPaths.console, { headers }),
       app().request(ExperimentalPaths.consoleOrgs, { headers }),
-      app().request(`${ExperimentalPaths.tool}?provider=opencode&model=gpt-5`, { headers }),
+      app().request(`${ExperimentalPaths.tool}?provider=openbmw&model=gpt-5`, { headers }),
       app().request(ExperimentalPaths.toolIDs, { headers }),
       app().request(ExperimentalPaths.worktree, { headers }),
       app().request(ExperimentalPaths.resource, { headers }),
@@ -173,7 +173,7 @@ describe("experimental HttpApi", () => {
 
     expect(created.status).toBe(200)
     const info = (await created.json()) as Worktree.Info
-    expect(info).toMatchObject({ name: "api-test", branch: "opencode/api-test" })
+    expect(info).toMatchObject({ name: "api-test", branch: "openbmw/api-test" })
     await waitReady(info.directory)
 
     const listed = await app().request(ExperimentalPaths.worktree, { headers })

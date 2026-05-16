@@ -102,8 +102,8 @@ export const dict = {
   "dialog.provider.group.popular": "Popüler",
   "dialog.provider.group.other": "Diğer",
   "dialog.provider.tag.recommended": "Önerilen",
-  "dialog.provider.opencode.note": "Claude, GPT, Gemini ve daha fazlasını içeren seçilmiş modeller",
-  "dialog.provider.opencode.tagline": "Güvenilir optimize edilmiş modeller",
+  "dialog.provider.opencode\.note": "Claude, GPT, Gemini ve daha fazlasını içeren seçilmiş modeller",
+  "dialog.provider.opencode\.tagline": "Güvenilir optimize edilmiş modeller",
   "dialog.provider.opencodeGo.tagline": "Herkes için düşük maliyetli abonelik",
   "dialog.provider.anthropic.note": "Pro ve Max dahil Claude modellerine doğrudan erişim",
   "dialog.provider.copilot.note": "GitHub Copilot üzerinden kodlama yardımı için yapay zekâ modelleri",
@@ -141,7 +141,7 @@ export const dict = {
   "provider.connect.opencodeZen.line2":
     "Tek bir API anahtarıyla Claude, GPT, Gemini, GLM ve daha fazlası gibi modellere erişebilirsiniz.",
   "provider.connect.opencodeZen.visit.prefix": "",
-  "provider.connect.opencodeZen.visit.link": "opencode.ai/zen",
+  "provider.connect.opencodeZen.visit.link": "opencode\.ai/zen",
   "provider.connect.opencodeZen.visit.suffix": " adresini ziyaret ederek API anahtarınızı alın.",
   "provider.connect.oauth.code.visit.prefix":
     "Hesabınızı bağlamak ve OpenCode'da {{provider}} modellerini kullanmak için ",
@@ -299,7 +299,7 @@ export const dict = {
   "dialog.mcp.empty": "Yapılandırılmış MCP yok",
 
   "dialog.lsp.empty": "LSP'ler dosya türlerinden otomatik algılanır",
-  "dialog.plugins.empty": "Eklentiler opencode.json içinde yapılandırılır",
+  "dialog.plugins.empty": "Eklentiler opencode\.json içinde yapılandırılır",
 
   "mcp.status.connected": "bağlı",
   "mcp.status.failed": "başarısız",
@@ -475,7 +475,7 @@ export const dict = {
   "error.chain.responseBody": "Yanıt gövdesi:\n{{body}}",
   "error.chain.didYouMean": "Bunu mu demek istediniz: {{suggestions}}",
   "error.chain.modelNotFound": "Model bulunamadı: {{provider}}/{{model}}",
-  "error.chain.checkConfig": "Yapılandırma dosyanızı (opencode.json) sağlayıcı/model adlarını kontrol edin",
+  "error.chain.checkConfig": "Yapılandırma dosyanızı (opencode\.json) sağlayıcı/model adlarını kontrol edin",
   "error.chain.mcpFailed":
     'MCP sunucusu "{{name}}" başarısız oldu. Not: OpenCode henüz MCP kimlik doğrulamasını desteklemiyor.',
   "error.chain.providerAuthFailed": "Sağlayıcı kimlik doğrulaması başarısız ({{provider}}): {{message}}",

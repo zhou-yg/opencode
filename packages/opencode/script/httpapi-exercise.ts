@@ -40,8 +40,8 @@ process.env.XDG_CONFIG_HOME = path.join(exerciseGlobalRoot, "config")
 process.env.XDG_STATE_HOME = path.join(exerciseGlobalRoot, "state")
 process.env.XDG_CACHE_HOME = path.join(exerciseGlobalRoot, "cache")
 process.env.OPENCODE_DISABLE_SHARE = "true"
-const exerciseConfigDirectory = path.join(exerciseGlobalRoot, "config", "opencode")
-const exerciseDataDirectory = path.join(exerciseGlobalRoot, "data", "opencode")
+const exerciseConfigDirectory = path.join(exerciseGlobalRoot, "config", "openbmw")
+const exerciseDataDirectory = path.join(exerciseGlobalRoot, "data", "openbmw")
 
 const preserveExerciseDatabase = !!process.env.OPENCODE_HTTPAPI_EXERCISE_DB
 const exerciseDatabasePath =
@@ -403,7 +403,7 @@ const scenarios: Scenario[] = [
     .seeded(() =>
       Effect.promise(() =>
         Bun.write(
-          path.join(exerciseConfigDirectory, "opencode.jsonc"),
+          path.join(exerciseConfigDirectory, "opencode\.jsonc"),
           JSON.stringify({ username: "httpapi-global" }, null, 2),
         ),
       ),
@@ -416,7 +416,7 @@ const scenarios: Scenario[] = [
           object(body)
           check(body.username === "httpapi-global", "global config update should return patched config")
           const text = yield* Effect.promise(() =>
-            Bun.file(path.join(exerciseConfigDirectory, "opencode.jsonc")).text(),
+            Bun.file(path.join(exerciseConfigDirectory, "opencode\.jsonc")).text(),
           )
           check(text.includes('"username": "httpapi-global"'), "global config update should write isolated config file")
         }),
@@ -786,7 +786,7 @@ const scenarios: Scenario[] = [
   http
     .get("/experimental/tool", "tool.list")
     .at((ctx) => ({
-      path: `/experimental/tool?${new URLSearchParams({ provider: "opencode", model: "test" })}`,
+      path: `/experimental/tool?${new URLSearchParams({ provider: "openbmw", model: "test" })}`,
       headers: ctx.headers(),
     }))
     .json(200, array, "status"),
@@ -1641,7 +1641,7 @@ function withContext<A, E>(scenario: ActiveScenario, use: (ctx: SeededContext<un
                 time: { created: Date.now() },
                 agent: "build",
                 model: {
-                  providerID: ProviderID.opencode,
+                  providerID: ProviderID.openbmw,
                   modelID: ModelID.make("test"),
                 },
               }

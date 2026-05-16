@@ -55,7 +55,7 @@ const getBase = (): Configuration => ({
   },
   protocols: {
     name: "OpenCode",
-    schemes: ["opencode"],
+    schemes: ["openbmw"],
   },
   win: {
     icon: `resources/icons/icon.ico`,
@@ -85,7 +85,7 @@ function getConfig() {
     case "dev": {
       return {
         ...base,
-        appId: "ai.opencode.desktop.dev",
+        appId: "ai.opencode\.desktop.dev",
         productName: "OpenCode Dev",
         rpm: { packageName: "opencode-dev" },
       }
@@ -93,9 +93,9 @@ function getConfig() {
     case "beta": {
       return {
         ...base,
-        appId: "ai.opencode.desktop.beta",
+        appId: "ai.opencode\.desktop.beta",
         productName: "OpenCode Beta",
-        protocols: { name: "OpenCode Beta", schemes: ["opencode"] },
+        protocols: { name: "OpenCode Beta", schemes: ["openbmw"] },
         publish: { provider: "github", owner: "anomalyco", repo: "opencode-beta", channel: "latest" },
         rpm: { packageName: "opencode-beta" },
       }
@@ -103,11 +103,11 @@ function getConfig() {
     case "prod": {
       return {
         ...base,
-        appId: "ai.opencode.desktop",
+        appId: "ai.opencode\.desktop",
         productName: "OpenCode",
-        protocols: { name: "OpenCode", schemes: ["opencode"] },
-        publish: { provider: "github", owner: "anomalyco", repo: "opencode", channel: "latest" },
-        rpm: { packageName: "opencode" },
+        protocols: { name: "OpenCode", schemes: ["openbmw"] },
+        publish: { provider: "github", owner: "anomalyco", repo: "openbmw", channel: "latest" },
+        rpm: { packageName: "openbmw" },
       }
     }
   }

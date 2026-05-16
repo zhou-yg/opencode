@@ -418,7 +418,7 @@ describe("session HttpApi", () => {
     "matches legacy project-scoped path and directory precedence",
     withTmp({ git: true, config: { formatter: false, lsp: false } }, (tmp) =>
       Effect.gen(function* () {
-        const currentDir = path.join(tmp.path, "packages", "opencode", "src")
+        const currentDir = path.join(tmp.path, "packages", "openbmw", "src")
         yield* Effect.promise(() => mkdir(currentDir, { recursive: true }))
 
         const pathSession = yield* createSession(currentDir)
@@ -431,7 +431,7 @@ describe("session HttpApi", () => {
 
         const query = new URLSearchParams({
           scope: "project",
-          path: "packages/opencode/src",
+          path: "packages/openbmw/src",
           directory: currentDir,
         })
         const headers = { "x-opencode-directory": tmp.path }

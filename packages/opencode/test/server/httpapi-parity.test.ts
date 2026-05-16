@@ -67,7 +67,7 @@ describe("Link header host", () => {
 
     const response = await app(true).request(`/session/${sessionID}/message?limit=2`, {
       headers: {
-        host: "opencode.test:4096",
+        host: "opencode\.test:4096",
         "x-opencode-directory": tmp.path,
       },
     })
@@ -76,7 +76,7 @@ describe("Link header host", () => {
     const link = response.headers.get("link")
     expect(link).not.toBeNull()
     // Link should contain the request's Host, not "localhost".
-    expect(link).toContain("opencode.test")
+    expect(link).toContain("opencode\.test")
     expect(link).not.toContain("localhost")
   })
 })

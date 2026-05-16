@@ -38,7 +38,7 @@ describe("session.list", () => {
   test("does not filter by directory when directory is omitted", async () => {
     Flag.OPENCODE_EXPERIMENTAL_WORKSPACES = false
     await using tmp = await tmpdir({ git: true })
-    await mkdir(path.join(tmp.path, "packages", "opencode"), { recursive: true })
+    await mkdir(path.join(tmp.path, "packages", "openbmw"), { recursive: true })
     await mkdir(path.join(tmp.path, "packages", "app"), { recursive: true })
 
     await WithInstance.provide({
@@ -51,7 +51,7 @@ describe("session.list", () => {
           fn: async () => svc.create({ title: "parent" }),
         })
         const current = await WithInstance.provide({
-          directory: path.join(tmp.path, "packages", "opencode"),
+          directory: path.join(tmp.path, "packages", "openbmw"),
           fn: async () => svc.create({ title: "current" }),
         })
         const sibling = await WithInstance.provide({
@@ -71,7 +71,7 @@ describe("session.list", () => {
   test("filters by directory when directory is provided", async () => {
     Flag.OPENCODE_EXPERIMENTAL_WORKSPACES = false
     await using tmp = await tmpdir({ git: true })
-    await mkdir(path.join(tmp.path, "packages", "opencode"), { recursive: true })
+    await mkdir(path.join(tmp.path, "packages", "openbmw"), { recursive: true })
     await mkdir(path.join(tmp.path, "packages", "app"), { recursive: true })
 
     await WithInstance.provide({
@@ -84,7 +84,7 @@ describe("session.list", () => {
           fn: async () => svc.create({ title: "parent" }),
         })
         const current = await WithInstance.provide({
-          directory: path.join(tmp.path, "packages", "opencode"),
+          directory: path.join(tmp.path, "packages", "openbmw"),
           fn: async () => svc.create({ title: "current" }),
         })
         const sibling = await WithInstance.provide({
@@ -92,7 +92,7 @@ describe("session.list", () => {
           fn: async () => svc.create({ title: "sibling" }),
         })
 
-        const ids = (await svc.list({ directory: path.join(tmp.path, "packages", "opencode") })).map((s) => s.id)
+        const ids = (await svc.list({ directory: path.join(tmp.path, "packages", "openbmw") })).map((s) => s.id)
         expect(ids).not.toContain(root.id)
         expect(ids).not.toContain(parent.id)
         expect(ids).toContain(current.id)
@@ -104,22 +104,22 @@ describe("session.list", () => {
   test("filters by path and ignores directory when path is provided", async () => {
     Flag.OPENCODE_EXPERIMENTAL_WORKSPACES = false
     await using tmp = await tmpdir({ git: true })
-    await mkdir(path.join(tmp.path, "packages", "opencode", "src", "deep"), { recursive: true })
+    await mkdir(path.join(tmp.path, "packages", "openbmw", "src", "deep"), { recursive: true })
     await mkdir(path.join(tmp.path, "packages", "app"), { recursive: true })
 
     await WithInstance.provide({
       directory: tmp.path,
       fn: async () => {
         const parent = await WithInstance.provide({
-          directory: path.join(tmp.path, "packages", "opencode"),
+          directory: path.join(tmp.path, "packages", "openbmw"),
           fn: async () => svc.create({ title: "parent" }),
         })
         const current = await WithInstance.provide({
-          directory: path.join(tmp.path, "packages", "opencode", "src"),
+          directory: path.join(tmp.path, "packages", "openbmw", "src"),
           fn: async () => svc.create({ title: "current" }),
         })
         const deeper = await WithInstance.provide({
-          directory: path.join(tmp.path, "packages", "opencode", "src", "deep"),
+          directory: path.join(tmp.path, "packages", "openbmw", "src", "deep"),
           fn: async () => svc.create({ title: "deeper" }),
         })
         const sibling = await WithInstance.provide({
@@ -130,7 +130,7 @@ describe("session.list", () => {
         const pathIDs = (
           await svc.list({
             directory: path.join(tmp.path, "packages", "app"),
-            path: "packages/opencode/src",
+            path: "packages/openbmw/src",
           })
         ).map((s) => s.id)
         expect(pathIDs).not.toContain(parent.id)
@@ -144,14 +144,14 @@ describe("session.list", () => {
   test("falls back to directory when filtering legacy sessions without path", async () => {
     Flag.OPENCODE_EXPERIMENTAL_WORKSPACES = false
     await using tmp = await tmpdir({ git: true })
-    await mkdir(path.join(tmp.path, "packages", "opencode", "src"), { recursive: true })
+    await mkdir(path.join(tmp.path, "packages", "openbmw", "src"), { recursive: true })
     await mkdir(path.join(tmp.path, "packages", "app"), { recursive: true })
 
     await WithInstance.provide({
       directory: tmp.path,
       fn: async () => {
         const current = await WithInstance.provide({
-          directory: path.join(tmp.path, "packages", "opencode", "src"),
+          directory: path.join(tmp.path, "packages", "openbmw", "src"),
           fn: async () => svc.create({ title: "legacy-current" }),
         })
         const sibling = await WithInstance.provide({
@@ -164,8 +164,8 @@ describe("session.list", () => {
 
         const pathIDs = (
           await svc.list({
-            directory: path.join(tmp.path, "packages", "opencode", "src"),
-            path: "packages/opencode/src",
+            directory: path.join(tmp.path, "packages", "openbmw", "src"),
+            path: "packages/openbmw/src",
           })
         ).map((s) => s.id)
         expect(pathIDs).toContain(current.id)

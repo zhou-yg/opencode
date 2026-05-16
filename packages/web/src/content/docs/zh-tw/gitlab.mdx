@@ -13,7 +13,7 @@ OpenCode 透過 GitLab CI/CD 管線或 GitLab Duo 與您的 GitLab 工作流程�
 
 OpenCode 可以在常規的 GitLab 管線中執行。您可以將其作為 [CI 元件](https://docs.gitlab.com/ee/ci/components/) 整合到管線中。
 
-這裡我們使用的是社群建立的 OpenCode CI/CD 元件 — [nagyv/gitlab-opencode](https://gitlab.com/nagyv/gitlab-opencode)。
+這裡我們使用的是社群建立的 OpenCode CI/CD 元件 — [nagyv/gitlab-openbmw](https://gitlab.com/nagyv/gitlab-openbmw)。
 
 ---
 
@@ -32,7 +32,7 @@ OpenCode 可以在常規的 GitLab 管線中執行。您可以將其作為 [CI �
 
    ```yaml title=".gitlab-ci.yml"
    include:
-     - component: $CI_SERVER_FQDN/nagyv/gitlab-opencode/opencode@2
+     - component: $CI_SERVER_FQDN/nagyv/gitlab-openbmw/openbmw@2
        inputs:
          config_dir: ${CI_PROJECT_DIR}/opencode-config
          auth_json: $OPENCODE_AUTH_JSON # The variable name for your OpenCode authentication JSON
@@ -40,7 +40,7 @@ OpenCode 可以在常規的 GitLab 管線中執行。您可以將其作為 [CI �
          message: "Your prompt here"
    ```
 
-有關更多輸入參數和使用情境，請[查看該元件的文件](https://gitlab.com/explore/catalog/nagyv/gitlab-opencode)。
+有關更多輸入參數和使用情境，請[查看該元件的文件](https://gitlab.com/explore/catalog/nagyv/gitlab-openbmw)。
 
 ---
 
@@ -81,7 +81,7 @@ OpenCode 在您的 GitLab CI/CD 管線中執行，以下是設定所需的步驟
     ```yaml
     image: node:22-slim
     commands:
-      - echo "Installing opencode"
+      - echo "Installing openbmw"
       - npm install --global opencode-ai
       - echo "Installing glab"
       - export GITLAB_TOKEN=$GITLAB_TOKEN_OPENCODE
@@ -91,9 +91,9 @@ OpenCode 在您的 GitLab CI/CD 管線中執行，以下是設定所需的步驟
       - echo "Configuring glab"
       - echo $GITLAB_HOST
       - echo "Creating OpenCode auth configuration"
-      - mkdir --parents ~/.local/share/opencode
+      - mkdir --parents ~/.local/share/openbmw
       - |
-        cat > ~/.local/share/opencode/auth.json << EOF
+        cat > ~/.local/share/openbmw/auth.json << EOF
         {
           "anthropic": {
             "type": "api",
@@ -102,13 +102,13 @@ OpenCode 在您的 GitLab CI/CD 管線中執行，以下是設定所需的步驟
         }
         EOF
       - echo "Configuring git"
-      - git config --global user.email "opencode@gitlab.com"
+      - git config --global user.email "openbmw@gitlab.com"
       - git config --global user.name "OpenCode"
       - echo "Testing glab"
       - glab issue list
       - echo "Running OpenCode"
       - |
-        opencode run "
+        openbmw run "
         You are an AI assistant helping with GitLab operations.
 
         Context: $AI_FLOW_CONTEXT

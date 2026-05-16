@@ -14,7 +14,7 @@
   node_modules ? callPackage ./node-modules.nix { },
 }:
 stdenvNoCC.mkDerivation (finalAttrs: {
-  pname = "opencode";
+  pname = "openbmw";
   inherit (node_modules) version src;
   inherit node_modules;
 
@@ -45,7 +45,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   buildPhase = ''
     runHook preBuild
 
-    cd ./packages/opencode
+    cd ./packages/openbmw
     bun --bun ./script/build.ts --single --skip-install
     bun --bun ./script/schema.ts schema.json
 
@@ -55,10 +55,10 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   installPhase = ''
     runHook preInstall
 
-    install -Dm755 dist/opencode-*/bin/opencode $out/bin/opencode
-    install -Dm644 schema.json $out/share/opencode/schema.json
+    install -Dm755 dist/openbmw-*/bin/openbmw $out/bin/openbmw
+    install -Dm644 schema.json $out/share/openbmw/schema.json
 
-    wrapProgram $out/bin/opencode \
+    wrapProgram $out/bin/openbmw \
       --prefix PATH : ${
         lib.makeBinPath (
           [
@@ -74,9 +74,9 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
   postInstall = lib.optionalString (stdenvNoCC.buildPlatform.canExecute stdenvNoCC.hostPlatform) ''
     # trick yargs into also generating zsh completions
-    installShellCompletion --cmd opencode \
-      --bash <($out/bin/opencode completion) \
-      --zsh <(SHELL=/bin/zsh $out/bin/opencode completion)
+    installShellCompletion --cmd openbmw \
+      --bash <($out/bin/openbmw completion) \
+      --zsh <(SHELL=/bin/zsh $out/bin/openbmw completion)
   '';
 
   nativeInstallCheckInputs = [
@@ -88,14 +88,14 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   versionCheckProgramArg = "--version";
 
   passthru = {
-    jsonschema = "${placeholder "out"}/share/opencode/schema.json";
+    jsonschema = "${placeholder "out"}/share/openbmw/schema.json";
   };
 
   meta = {
     description = "The open source coding agent";
-    homepage = "https://opencode.ai/";
+    homepage = "https://opencode\.ai/";
     license = lib.licenses.mit;
-    mainProgram = "opencode";
+    mainProgram = "openbmw";
     inherit (node_modules.meta) platforms;
   };
 })
